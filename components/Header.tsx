@@ -6,16 +6,45 @@ import { navLinks } from "@/lib/content";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hiddenByWhyFetan, setHiddenByWhyFetan] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      const whyFetan = document.querySelector<HTMLElement>(".why-fetan");
+      if (!whyFetan) {
+        setHiddenByWhyFetan(false);
+        return;
+      }
+
+      const rect = whyFetan.getBoundingClientRect();
+      // Hide while Why Fetan covers the header band at the top of the viewport
+      const coveringHeader = rect.top <= 8 && rect.bottom > 96;
+      setHiddenByWhyFetan(coveringHeader);
+
+      if (coveringHeader) setMenuOpen(false);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
-    <header id="siteHeader" className={scrolled ? "scrolled" : undefined}>
+    <header
+      id="siteHeader"
+      className={[
+        scrolled ? "scrolled" : "",
+        hiddenByWhyFetan ? "is-hidden" : "",
+      ]
+        .filter(Boolean)
+        .join(" ") || undefined}
+    >
       <div className="wrap">
         <a href="#top" className="logo">
           FET<span>A</span>N
