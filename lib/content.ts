@@ -300,7 +300,7 @@ export const workItems: WorkItem[] = [
 
 export const statsSection = {
   eyebrow: "Impact, In Numbers",
-  heading: "Fifteen years of putting brands where people actually look.",
+  heading: "Ten years of putting brands where people actually look.",
 } as const;
 
 export const stats: StatItem[] = [
