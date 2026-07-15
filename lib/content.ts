@@ -60,11 +60,16 @@ export const siteMeta = {
   title: "Fetan Advertising | Full Service Creative Agency",
   description:
     "Fetan Advertising is a full service creative agency covering outdoor media, digital marketing, branding, print, and live events.",
-  email: "hello@fetanadvertising.com",
+  email:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@fetanadvertising.com",
   phone: "+251 90 000 0000",
   phoneHref: "tel:+251900000000",
-  location: "Addis Ababa, Ethiopia",
-} as const;
+  location: "Haile Gebre Silase St, Addis Ababa, Ethiopia",
+  mapsEmbedSrc:
+    "https://www.google.com/maps?q=Fetan+Advertising,+Haile+Gebre+Silase+St,+Addis+Ababa&hl=en&z=16&output=embed",
+  mapsUrl:
+    "https://www.google.com/maps/place/Fetan+Advertising,+Haile+Gebre+Silase+St,+Addis+Ababa/data=!4m2!3m1!1s0x164b854d7142d119:0x25b47a5b1822ab02",
+};
 
 export const navLinks: NavLink[] = [
   { href: "#top", label: "Home" },
@@ -345,8 +350,40 @@ export const testimonials: Testimonial[] = [
 
 export const ctaBandContent = {
   heading: "Ready To Start\nYour Next Campaign?",
-  ctaLabel: "Talk To Our Team",
-  ctaHref: "mailto:hello@fetanadvertising.com",
+  ctaLabel: "Request A Quote",
+  ctaHref: "#contact",
+} as const;
+
+export const quoteFormContent = {
+  eyebrow: "Get A Quote",
+  heading: "Tell Us About\nYour Campaign",
+  subcopy:
+    "Share a few details and we’ll come back with scope, timing, and next steps.",
+  mapHeading: "Find Us",
+  mapAddress: "Fetan Advertising — Haile Gebre Silase St, Addis Ababa",
+  services: [
+    "Outdoor Advertising",
+    "Printing",
+    "Strategy",
+    "Design",
+    "Exhibition Booth",
+    "Advertising",
+    "Event",
+    "Marketing",
+    "Full Campaign",
+  ],
+  budgets: [
+    "Under $5,000",
+    "$5,000 – $15,000",
+    "$15,000 – $50,000",
+    "$50,000+",
+    "Not sure yet",
+  ],
+  submitLabel: "Send Quote Request",
+  successMessage:
+    "Thanks — your quote request was sent. We’ll get back to you soon.",
+  errorMessage:
+    "Something went wrong sending your request. Please try again or email us directly.",
 } as const;
 
 export const footerContent = {

@@ -41,7 +41,13 @@ export function Footer() {
                 <a href={siteMeta.phoneHref}>{siteMeta.phone}</a>
               </li>
               <li>
-                <a href="#">{siteMeta.location}</a>
+                <a
+                  href={siteMeta.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {siteMeta.location}
+                </a>
               </li>
             </ul>
           </div>

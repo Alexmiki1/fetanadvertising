@@ -11,6 +11,7 @@ import { StatsCounters } from "@/components/StatsCounters";
 import { Clients } from "@/components/Clients";
 import { Testimonials } from "@/components/Testimonials";
 import { CTABand } from "@/components/CTABand";
+import { QuoteContact } from "@/components/QuoteContact";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         <Clients />
         <Testimonials />
         <CTABand />
+        <QuoteContact />
       </main>
       <Footer />
     </>

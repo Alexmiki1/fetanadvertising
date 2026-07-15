@@ -5,7 +5,7 @@ export function CTABand() {
   const headingLines = ctaBandContent.heading.split("\n");
 
   return (
-    <section className="cta-band" id="contact">
+    <section className="cta-band">
       <div className="wrap cta-inner">
         <Reveal>
           <h2 className="display">
