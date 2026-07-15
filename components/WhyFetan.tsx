@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { whyFetanSlides } from "@/lib/content";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -38,6 +39,16 @@ export function WhyFetan() {
             if (slide.kind === "intro") {
               return (
                 <div key="intro" className={`wf-slide ${slide.bg}`}>
+                  <div className="wf-media">
+                    <Image
+                      src={slide.image}
+                      alt={slide.imageAlt}
+                      fill
+                      sizes="100vw"
+                      priority
+                      className="wf-media-img"
+                    />
+                  </div>
                   <div className="wf-hex" />
                   <div className="wf-intro-inner">
                     <h2 className="wf-title display">
@@ -70,6 +81,15 @@ export function WhyFetan() {
 
             return (
               <div key={slide.num} className={`wf-slide ${slide.bg}`}>
+                <div className="wf-media">
+                  <Image
+                    src={slide.image}
+                    alt={slide.imageAlt}
+                    fill
+                    sizes="100vw"
+                    className="wf-media-img"
+                  />
+                </div>
                 <div className="wf-hex" />
                 <span className="wf-num">{slide.num}</span>
                 <h3 className="wf-word display">{slide.word}</h3>

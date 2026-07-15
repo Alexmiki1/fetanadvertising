@@ -12,6 +12,8 @@ export type WhyFetanSlide =
       pills: string[];
       tagline: string;
       bg: "wf-bg1";
+      image: string;
+      imageAlt: string;
     }
   | {
       kind: "value";
@@ -20,6 +22,8 @@ export type WhyFetanSlide =
       line: string;
       desc: string;
       bg: "wf-bg2" | "wf-bg3" | "wf-bg4";
+      image: string;
+      imageAlt: string;
     };
 
 export type ServiceItem = {
@@ -107,6 +111,9 @@ export const whyFetanSlides: WhyFetanSlide[] = [
     tagline:
       "We don't just run campaigns.\nWe create moments that make Addis stop and feel.",
     bg: "wf-bg1",
+    image: "/images/why-fetan/intro-drone.png",
+    imageAlt:
+      "Aerial production silhouette — drone over a vast Ethiopian landscape at sunset",
   },
   {
     kind: "value",
@@ -115,6 +122,9 @@ export const whyFetanSlides: WhyFetanSlide[] = [
     line: "We Move People, Not Just Metrics.",
     desc: "We tell stories that make audiences feel, because emotion builds connection, and connection builds brands that last.",
     bg: "wf-bg2",
+    image: "/images/why-fetan/emotion-crew.png",
+    imageAlt:
+      "Fetan crew on location with cinema camera and gimbal during a golden-hour shoot",
   },
   {
     kind: "value",
@@ -123,6 +133,9 @@ export const whyFetanSlides: WhyFetanSlide[] = [
     line: "Chaos Is Where We Create.",
     desc: "We don't play it safe. We experiment, break the format, and rebuild campaigns into something bold, loud, and alive.",
     bg: "wf-bg3",
+    image: "/images/why-fetan/fearless-production.png",
+    imageAlt:
+      "Professional production monitor and wireless transmitter filming a city sunset",
   },
   {
     kind: "value",
@@ -131,6 +144,9 @@ export const whyFetanSlides: WhyFetanSlide[] = [
     line: "We Keep It Real. Always.",
     desc: "No fluff, just honest creative that speaks to real people, in real streets, across real Ethiopia.",
     bg: "wf-bg4",
+    image: "/images/why-fetan/authentic-heritage.png",
+    imageAlt:
+      "People in traditional Ethiopian dress taking a selfie at a historic stone castle",
   },
 ];
 
