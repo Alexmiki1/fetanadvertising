@@ -6,7 +6,6 @@ type QuotePayload = {
   phone?: string;
   company?: string;
   service: string;
-  budget?: string;
   message: string;
 };
 
@@ -33,7 +32,6 @@ function parsePayload(body: unknown): QuotePayload | null {
     phone: isNonEmptyString(data.phone) ? data.phone.trim() : undefined,
     company: isNonEmptyString(data.company) ? data.company.trim() : undefined,
     service: data.service.trim(),
-    budget: isNonEmptyString(data.budget) ? data.budget.trim() : undefined,
     message: data.message.trim(),
   };
 }
@@ -80,7 +78,6 @@ export async function POST(request: Request) {
       `Phone: ${payload.phone ?? "—"}`,
       `Company: ${payload.company ?? "—"}`,
       `Service: ${payload.service}`,
-      `Budget: ${payload.budget ?? "—"}`,
       "",
       "Project details:",
       payload.message,

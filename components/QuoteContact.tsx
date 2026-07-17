@@ -10,7 +10,6 @@ type FormState = {
   phone: string;
   company: string;
   service: string;
-  budget: string;
   message: string;
 };
 
@@ -20,7 +19,6 @@ const initialState: FormState = {
   phone: "",
   company: "",
   service: "",
-  budget: "",
   message: "",
 };
 
@@ -180,21 +178,6 @@ export function QuoteContact() {
                     {quoteFormContent.services.map((service) => (
                       <option key={service} value={service}>
                         {service}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="quote-field">
-                  <span className="mono">Budget</span>
-                  <select
-                    name="budget"
-                    value={form.budget}
-                    onChange={(e) => update("budget", e.target.value)}
-                  >
-                    <option value="">Select a range</option>
-                    {quoteFormContent.budgets.map((budget) => (
-                      <option key={budget} value={budget}>
-                        {budget}
                       </option>
                     ))}
                   </select>

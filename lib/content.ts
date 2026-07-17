@@ -388,13 +388,6 @@ export const quoteFormContent = {
     "Marketing",
     "Full Campaign",
   ],
-  budgets: [
-    "Under $5,000",
-    "$5,000 – $15,000",
-    "$15,000 – $50,000",
-    "$50,000+",
-    "Not sure yet",
-  ],
   submitLabel: "Send Quote Request",
   successMessage:
     "Thanks — your quote request was sent. We’ll get back to you soon.",
