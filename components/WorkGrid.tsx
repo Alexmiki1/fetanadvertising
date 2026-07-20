@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import {
   workFilters,
   workItems,
@@ -25,7 +26,8 @@ function WorkCard({ item }: { item: WorkItem }) {
   }
 
   return (
-    <div
+    <Link
+      href={`/work/${item.id}`}
       className="work-item"
       data-cat={item.category}
       onMouseEnter={onEnter}
@@ -51,7 +53,7 @@ function WorkCard({ item }: { item: WorkItem }) {
         <h3 className="display">{item.title}</h3>
         <p>{item.description}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
