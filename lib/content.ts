@@ -45,6 +45,18 @@ export type WorkItem = {
   description: string;
   visual: "g1" | "g2" | "g3" | "g4" | "g5" | "g6";
   videoSrc?: string;
+  heroYoutubeId?: string;
+  heroImage?: string;
+  details?: {
+    intro?: string;
+    sections?: {
+      number: string;
+      title: string;
+      content: string;
+      image?: string;
+      youtubeId?: string;
+    }[];
+  };
 };
 
 export type StatItem = {
@@ -247,54 +259,210 @@ export const workFilters: { id: WorkCategory; label: string }[] = [
 export const workItems: WorkItem[] = [
   {
     id: "skyline",
-    category: "outdoor",
-    tag: "Outdoor",
-    title: "Skyline Takeover",
+    category: "branding",
+    tag: "Branding",
+    title: "Abay Homes",
     description: "Citywide billboard rollout across 40 sites over 6 weeks.",
     visual: "g1",
-    videoSrc: "/videos/work-skyline.mp4",
+    details: {
+      intro: "The branding for Abay Homes was created to establish the company as a modern, trustworthy, and premium real estate developer in Ethiopia’s growing housing market. The goal was to build a strong visual identity that reflects quality construction, modern urban living, and long-term investment value while appealing to both local homeowners and diaspora investors.\n\nThe brand identity combines professionalism, elegance, and reliability through clean visuals, modern typography, and a refined real estate aesthetic that communicates comfort, trust, and contemporary living.",
+      sections: [
+        {
+          number: "01",
+          title: "THE CHALLENGE",
+          content: "Abay Homes needed a branding identity that could clearly communicate its vision in a crowded and fast-growing real estate market. Many property developers share similar messaging, making it difficult for audiences to instantly recognize what makes one brand different from another.\n\nThe main challenge was creating a visual identity that balances luxury and accessibility while building trust among potential buyers and investors. The brand also needed to present itself as modern, organized, and future-focused without losing the sense of warmth and comfort associated with home ownership.\n\nAdditionally, the branding had to work consistently across multiple touchpoints including the website, social media, property advertisements, brochures, and outdoor marketing materials.",
+          image: "/images/abay-2.png"
+        },
+        {
+          number: "02",
+          title: "THE IDEA",
+          content: "The solution focused on developing a clean and modern brand identity that reflects confidence, sophistication, and contemporary urban living.\n\nA refined visual system was created using:\n• Minimal and professional design elements\n• Strong typography for clarity and authority\n• A balanced color palette that communicates trust and elegance\n• Structured layouts inspired by architecture and modern real estate design\n• Consistent visual hierarchy across digital and print materials",
+          image: "/images/abay-4.png"
+        },
+        {
+          number: "03",
+          title: "THE EXECUTION",
+          content: "The branding direction emphasized simplicity and professionalism while highlighting the lifestyle and investment value of the properties. Every element of the identity was designed to create a premium yet welcoming experience that appeals to modern homeowners and investors alike.\n\nThis cohesive branding system helped establish a recognizable and polished presence for Abay Homes across all customer-facing platforms.",
+          image: "/images/abay-3.png"
+        },
+        {
+          number: "04",
+          title: "THE IMPACT",
+          content: "The branding successfully positioned Abay Homes as a modern and credible real estate company within Addis Ababa’s competitive property market.\n\nThe new identity helped:\n• Strengthen brand recognition and professionalism\n• Improve visual consistency across all platforms\n• Build trust with potential homeowners and investors\n• Enhance the company’s premium market positioning\n• Create a stronger emotional connection with the target audience\n\nThe overall branding established Abay Homes as a forward-thinking real estate brand that represents quality, modern living, and confidence in the Ethiopian housing sector.",
+          image: "/images/abay-5.png"
+        }
+      ]
+    }
   },
   {
     id: "launch",
-    category: "digital",
-    tag: "Digital",
-    title: "Launch Sprint",
+    category: "branding",
+    tag: "Branding",
+    title: "Dema Hope",
     description: "Paid social + content push for a retail launch.",
     visual: "g2",
+    details: {
+      intro: "The branding and logo project for Dema Hope Real Estate focused on building a premium and modern visual identity that reflects luxury living, trust, and high-end real estate development in Ethiopia. The brand was designed to position Dema Hope as a leading real estate company offering upscale residential and commercial properties in Addis Ababa’s most desirable neighborhoods.\n\nThe identity combines elegance, professionalism, and modern urban lifestyle aesthetics while supporting the company’s long-term vision of redefining luxury real estate in Ethiopia. The branding also needed to communicate the company’s philosophy: “Dream. Elevate. Master. Achieve.",
+      sections: [
+        {
+          number: "01",
+          title: "THE CHALLENGE",
+          content: "The Ethiopian real estate market is highly competitive, with many developers competing for trust, visibility, and credibility. The challenge was to create a branding system and logo that would:\n\n• Differentiate Dema Hope from traditional and generic real estate brands\n• Communicate luxury, sophistication, and modern urban living\n• Build confidence among investors, homeowners, and diaspora buyers\n• Appeal to both local and international audiences\n• Create a strong visual identity adaptable across digital platforms, billboards, property signage, brochures, and social media\n\nAnother challenge was balancing premium luxury aesthetics with accessibility and trust, especially in a market where buyers are cautious about real estate investments and project delivery reliability.",
+          image: "/images/dema-1.png"
+        },
+        {
+          number: "02",
+          title: "THE IDEA",
+          content: "The branding solution focused on creating a sleek, elegant, and memorable identity system that visually represents luxury real estate and modern architecture. The logo and branding direction emphasized:\n\n• Minimal and sophisticated typography to reflect premium living\n• A clean and modern visual language inspired by architecture and urban development\n• A refined luxury-focused color palette to communicate exclusivity and professionalism",
+          image: "/images/dema-2.png"
+        },
+        {
+          number: "03",
+          title: "THE EXECUTION",
+          content: "Consistent branding across websites, property presentations, social media campaigns, and marketing materials.\n\nStrong messaging centered around aspiration, lifestyle elevation, and trust.\n\nThe visual identity was designed to support Dema Hope’s portfolio of luxury developments in locations such as Bole, Signal, Kazanchis, and Shola while reinforcing the company’s image as a forward-thinking and high-quality developer.",
+          image: "/images/dema-3.png"
+        },
+        {
+          number: "04",
+          title: "THE IMPACT",
+          content: "The final branding created a polished and recognizable identity that strengthened Dema Hope Real Estate’s market presence and premium positioning. The new visual system helped the company present its developments with a more luxurious, modern, and credible image.\n\nThe branding improved:\n• Brand recognition and professional presentation\n• Customer trust and investor confidence\n• Consistency across digital and physical marketing materials\n• The perception of quality, luxury, and innovation\n• The company’s ability to showcase high-end properties with a premium lifestyle-focused identity\n\nThe result was a strong real estate brand that visually communicates elegance, ambition, and modern luxury living in Ethiopia’s growing real estate market.",
+          image: "/images/dema-4.png"
+        }
+      ]
+    },
   },
   {
     id: "identity",
     category: "branding",
     tag: "Branding",
-    title: "Full Identity",
-    description: "Logo, system, and guidelines for a fintech client.",
+    title: "ALPHA POST TENSTION PLC",
+    description: "Logo, system, and guidelines for an engineering client.",
     visual: "g3",
-    videoSrc: "/videos/work-identity.mp4",
+    heroImage: "/images/alpha-hero.png",
+    details: {
+      intro: "Alpha Post Tension PLC is a Grade One specialized post-tension company registered in Ethiopia, established by Ethiopian professionals with extensive technical knowledge and hands-on experience gained across the Middle East. The company delivers advanced post-tension engineering solutions for modern construction projects, combining international standards with local expertise.\n\nThe objective of this project was to create a strong and professional brand presence that reflects the company’s technical excellence, reliability, and innovation in the construction industry. The visual identity and communication materials were designed to showcase Alpha Post Tension PLC as a trusted engineering partner capable of delivering high-performance structural solutions for complex construction developments.\n\nThe branding approach focused on creating a clean, modern, and industrial visual language that communicates strength, precision, and professionalism while positioning the company competitively within the Ethiopian construction sector.",
+      sections: [
+        {
+          number: "01",
+          title: "THE CHALLENGE",
+          content: "The main challenge was to create a visual identity that reflects the technical expertise and professionalism of Alpha Post Tension PLC while maintaining a clean and modern appearance. Since the construction and engineering industry is highly competitive, the brand needed a strong and recognizable identity that communicates strength, precision, and reliability.\n\nAnother challenge was simplifying complex engineering concepts into a minimal and memorable logo system that could work effectively across different platforms, including company profiles, construction signage, social media, uniforms, and digital applications. The existing visual presentation also needed stronger consistency, improved typography, and a more premium industrial feel to position the company as a leading post-tension specialist in Ethiopia.",
+          image: "/images/alpha-1.png"
+        },
+        {
+          number: "02",
+          title: "THE IDEA",
+          content: "The creative direction focused on building a bold, modern, and professional identity that reflects the engineering precision and structural strength of Alpha Post Tension PLC. The branding was designed to communicate trust, innovation, and technical excellence while maintaining a clean and memorable visual system.\n\nA strong orange color palette was selected to represent energy, construction, visibility, and confidence, while the white typography creates a clean contrast that improves clarity and professionalism. The typography uses a modern sans-serif style to give the brand a contemporary and industrial appearance that feels stable, technical, and easy to recognize.",
+          image: "/images/alpha-2.png"
+        },
+        {
+          number: "03",
+          title: "THE EXECUTION",
+          content: "The layout approach was kept minimal and balanced, allowing the logo and typography to remain highly visible across both print and digital applications. Circular graphic elements were incorporated into the logo symbol to subtly represent tension cables, structural systems, and connectivity within modern engineering solutions.\n\nOverall, the branding style combines simplicity with strong industrial aesthetics to create a professional identity that positions Alpha Post Tension PLC as a reliable and forward-thinking construction engineering company.",
+          image: "/images/alpha-3.png"
+        },
+        {
+          number: "04",
+          title: "THE IMPACT",
+          content: "The final branding system helped establish a stronger and more professional identity for Alpha Post Tension PLC across both digital and print platforms. The new visual direction improved brand consistency and created a modern industrial appearance that better reflects the company’s technical expertise and engineering capabilities.\n\nThe identity system was designed to increase brand recognition, strengthen client trust, and improve the company’s professional presentation within the competitive construction industry. Through the use of clean typography, bold color application, and structured layouts, the branding created a more confident and recognizable presence suitable for company profiles, construction materials, social media, and future marketing applications.",
+          image: "/images/alpha-4.png"
+        }
+      ]
+    }
   },
   {
     id: "reveal",
-    category: "events",
-    tag: "Events",
-    title: "Product Reveal",
+    category: "branding",
+    tag: "Branding",
+    title: "Bamacon",
     description: "Live launch event for 800 guests, full staging.",
     visual: "g4",
+    details: {
+      intro: "The branding and logo project for Bamacon Engineering PLC focused on creating a strong and professional identity that reflects the company’s position as a Grade 1 construction and engineering firm in Ethiopia. The brand needed to communicate trust, strength, innovation, and modern construction expertise while representing Bamacon’s large-scale projects, sister companies, and growing presence in the engineering and real estate industry. The visual identity was designed to align with the company’s mission of delivering high-quality engineering, construction, and infrastructure solutions.",
+      sections: [
+        {
+          number: "01",
+          title: "THE CHALLENGE",
+          content: "Bamacon Engineering operates in a highly competitive construction market where many companies use generic industrial branding. The challenge was to create a brand identity and logo that would:\n\n• Stand out in the Ethiopian construction and engineering industry\n• Reflect professionalism, reliability, and technical expertise\n• Represent both engineering precision and modern architectural development\n• Build trust with corporate clients, investors, and partners\n• Maintain consistency across websites, project signage, social media, and marketing materials\n\nAnother challenge was balancing a modern visual style with the company’s strong industrial and infrastructure-focused background.",
+          image: "/images/bama-5.png"
+        },
+        {
+          number: "02",
+          title: "THE IDEA",
+          content: "The branding solution focused on developing a clean, bold, and professional identity system that visually represents Bamacon Engineering’s values and services. The logo direction emphasized:\n\n• Strong geometric forms to symbolize structure, stability, and engineering precision\n• A modern and corporate typography style for professionalism and trust\n• A construction-inspired visual identity that aligns with large-scale building and infrastructure projects",
+          image: "/images/bama-1.png"
+        },
+        {
+          number: "03",
+          title: "THE EXECUTION",
+          content: "Consistent brand application across digital platforms, construction projects, company profiles, and promotional materials.\n\nA refined color palette that communicates strength, confidence, and reliability.\n\nThe branding was designed to support Bamacon’s image as a forward-thinking engineering company involved in construction, real estate, concrete production, and infrastructure development.",
+          image: "/images/bama-3.png"
+        },
+        {
+          number: "04",
+          title: "THE IMPACT",
+          content: "The final branding created a stronger and more recognizable corporate presence for Bamacon Engineering. The updated visual identity helped the company present itself as a modern, credible, and high-capacity construction brand capable of handling large-scale projects and partnerships.\n\nThe branding system improved:\n• Brand consistency across platforms and marketing materials\n• Professional presentation to clients and stakeholders\n• Visual recognition in the construction industry\n• Customer trust and corporate credibility\n• The company’s ability to showcase its projects and services with a modern and organized identity\n\nThe result was a professional engineering brand that visually communicates quality construction, innovation, and long-term reliability.",
+          image: "/images/bama-4.png"
+        }
+      ]
+    }
   },
   {
     id: "transit",
     category: "outdoor",
     tag: "Outdoor",
-    title: "Transit Wrap",
+    title: "Beu Delivery",
     description: "Fleetwide vehicle branding across the metro.",
     visual: "g5",
+    heroYoutubeId: "3WJsBEsSRKw",
+    details: {
+      intro: "This Digital Out of Home (DOOH) campaign is designed to capture attention with vibrant visuals and compelling messaging in high traffic locations. By displaying beU on premium LED screens throughout the city, the campaign reinforces brand awareness, encourages app downloads, and reminds people that delicious food is only a few taps away.",
+      sections: [
+        {
+          number: "01",
+          title: "CAMPAIGN OBJECTIVES",
+          content: "✦ Increase brand awareness across Addis Ababa\n✦ Drive mobile app downloads\n✦ Promote fast and affordable food delivery\n✦ Highlight restaurant variety and exclusive offers\n✦ Increase daily customer orders"
+        },
+        {
+          number: "02",
+          title: "TARGET AUDIENCE",
+          content: "— Office workers\n— University students\n— Busy professionals\n— Families\n— Young adults\n— Anyone looking for fast, reliable food delivery"
+        },
+        {
+          number: "03",
+          title: "LOCATIONS",
+          content: "— Bole Friendship\n— Churchill\n— Merkato\n— CMC Roundabout\n— Bole Road\n— Wello Sefer\n— Bole Airport VIP Entrance\n— Near Bambis"
+        }
+      ]
+    }
   },
   {
     id: "always-on",
-    category: "digital",
-    tag: "Digital",
-    title: "Always-On",
+    category: "outdoor",
+    tag: "Outdoor",
+    title: "Emirates Airlines",
     description: "Ongoing performance marketing retainer.",
     visual: "g6",
-    videoSrc: "/videos/work-always-on.mp4",
+    heroYoutubeId: "cc03Hz13ewU",
+    details: {
+      intro: "This Digital Out of Home (DOOH) campaign is designed to capture attention with high impact visuals displayed on premium LED screens in Addis Ababa's busiest locations. Whether promoting international travel, holiday packages, or business destinations, the campaign delivers exceptional visibility, inspires travelers, and strengthens Emirates' premium brand presence.",
+      sections: [
+        {
+          number: "01",
+          title: "CAMPAIGN OBJECTIVES",
+          content: "✦ Increase brand awareness in Ethiopia\n✦ Promote international travel and holiday destinations\n✦ Drive flight bookings\n✦ Highlight Emirates' premium travel experience\n✦ Reach travelers during peak commuting hours"
+        },
+        {
+          number: "02",
+          title: "TARGET AUDIENCE",
+          content: "— Business professionals\n— International travelers\n— Tourists\n— Families\n— Students traveling abroad\n— Frequent flyers"
+        },
+        {
+          number: "03",
+          title: "LOCATIONS",
+          content: "— Bole Friendship\n— Churchill\n— Merkato\n— CMC Roundabout\n— Bole Road\n— Wello Sefer\n— Bole Airport VIP Entrance\n— Near Bambis"
+        }
+      ]
+    }
   },
 ];
 
