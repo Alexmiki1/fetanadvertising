@@ -33,7 +33,67 @@ function WorkCard({ item }: { item: WorkItem }) {
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
-      <div className={`wi-visual ${item.visual}`} />
+      <div className={`wi-visual ${item.visual}`} style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+        {item.category === "branding" ? (
+          <>
+            <div
+              className="display"
+              style={{
+                fontSize: "clamp(3rem, 8vw, 6rem)",
+                color: "rgba(255, 255, 255, 0.04)",
+                whiteSpace: "nowrap",
+                position: "absolute",
+                pointerEvents: "none",
+                userSelect: "none",
+                transform: "rotate(-2deg) scale(1.1)",
+                fontWeight: 900,
+              }}
+            >
+              {item.title} {item.title}
+            </div>
+            <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 20px" }}>
+              <div 
+                className="display" 
+                style={{ 
+                  fontSize: "clamp(1.5rem, 3vw, 2.5rem)", 
+                  color: "var(--white)", 
+                  margin: 0, 
+                  textTransform: "uppercase",
+                  letterSpacing: "2px",
+                  lineHeight: 1.1,
+                }}
+              >
+                {item.title}
+              </div>
+              <div 
+                className="mono" 
+                style={{ 
+                  color: "var(--yellow)", 
+                  fontSize: "0.75rem", 
+                  textTransform: "uppercase", 
+                  letterSpacing: "3px", 
+                  display: "block", 
+                  marginTop: "0.75rem" 
+                }}
+              >
+                Brand Identity
+              </div>
+            </div>
+          </>
+        ) : item.heroImage ? (
+          <img
+            src={item.heroImage}
+            alt={item.title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              mixBlendMode: "overlay",
+              opacity: 0.8,
+            }}
+          />
+        ) : null}
+      </div>
       {item.videoSrc ? (
         <video
           ref={videoRef}

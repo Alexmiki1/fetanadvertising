@@ -264,6 +264,7 @@ export const workItems: WorkItem[] = [
     title: "Abay Homes",
     description: "Citywide billboard rollout across 40 sites over 6 weeks.",
     visual: "g1",
+    heroImage: "/images/abay-2.png",
     details: {
       intro: "The branding for Abay Homes was created to establish the company as a modern, trustworthy, and premium real estate developer in Ethiopia’s growing housing market. The goal was to build a strong visual identity that reflects quality construction, modern urban living, and long-term investment value while appealing to both local homeowners and diaspora investors.\n\nThe brand identity combines professionalism, elegance, and reliability through clean visuals, modern typography, and a refined real estate aesthetic that communicates comfort, trust, and contemporary living.",
       sections: [
@@ -301,6 +302,7 @@ export const workItems: WorkItem[] = [
     title: "Dema Hope",
     description: "Paid social + content push for a retail launch.",
     visual: "g2",
+    heroImage: "/images/dema-1.png",
     details: {
       intro: "The branding and logo project for Dema Hope Real Estate focused on building a premium and modern visual identity that reflects luxury living, trust, and high-end real estate development in Ethiopia. The brand was designed to position Dema Hope as a leading real estate company offering upscale residential and commercial properties in Addis Ababa’s most desirable neighborhoods.\n\nThe identity combines elegance, professionalism, and modern urban lifestyle aesthetics while supporting the company’s long-term vision of redefining luxury real estate in Ethiopia. The branding also needed to communicate the company’s philosophy: “Dream. Elevate. Master. Achieve.",
       sections: [
@@ -376,6 +378,7 @@ export const workItems: WorkItem[] = [
     title: "Bamacon",
     description: "Live launch event for 800 guests, full staging.",
     visual: "g4",
+    heroImage: "/images/bama-5.png",
     details: {
       intro: "The branding and logo project for Bamacon Engineering PLC focused on creating a strong and professional identity that reflects the company’s position as a Grade 1 construction and engineering firm in Ethiopia. The brand needed to communicate trust, strength, innovation, and modern construction expertise while representing Bamacon’s large-scale projects, sister companies, and growing presence in the engineering and real estate industry. The visual identity was designed to align with the company’s mission of delivering high-quality engineering, construction, and infrastructure solutions.",
       sections: [
@@ -389,7 +392,7 @@ export const workItems: WorkItem[] = [
           number: "02",
           title: "THE IDEA",
           content: "The branding solution focused on developing a clean, bold, and professional identity system that visually represents Bamacon Engineering’s values and services. The logo direction emphasized:\n\n• Strong geometric forms to symbolize structure, stability, and engineering precision\n• A modern and corporate typography style for professionalism and trust\n• A construction-inspired visual identity that aligns with large-scale building and infrastructure projects",
-          image: "/images/bama-1.png"
+          image: "/images/bama-logo-mark.png"
         },
         {
           number: "03",

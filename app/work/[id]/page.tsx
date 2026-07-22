@@ -4,9 +4,16 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTABand } from "@/components/CTABand";
 
+export function generateStaticParams() {
+  return workItems.map((item) => ({
+    id: item.id,
+  }));
+}
+
 export default async function CampaignPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const item = workItems.find((w) => w.id === id);
+  const decodedId = decodeURIComponent(id);
+  const item = workItems.find((w) => w.id === decodedId);
   
   if (!item) {
     notFound();
@@ -30,7 +37,56 @@ export default async function CampaignPage({ params }: { params: Promise<{ id: s
           
           <div className="wrap">
             <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '16px', backgroundColor: 'var(--black-card)', minHeight: '60vh' }}>
-              {item.heroYoutubeId ? (
+              {item.category === "branding" ? (
+                <div 
+                  className={`wi-visual ${item.visual}`} 
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
+                >
+                  <div 
+                    className="display"
+                    style={{ 
+                      fontSize: "clamp(4rem, 10vw, 8rem)",
+                      color: "rgba(255, 255, 255, 0.04)",
+                      whiteSpace: "nowrap",
+                      position: "absolute",
+                      pointerEvents: "none",
+                      userSelect: "none",
+                      transform: "rotate(-2deg) scale(1.1)",
+                      fontWeight: 900,
+                    }}
+                  >
+                    {item.title} {item.title}
+                  </div>
+                  <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 20px" }}>
+                    <div 
+                      className="display" 
+                      style={{ 
+                        fontSize: "clamp(2rem, 5vw, 4rem)", 
+                        color: "var(--white)", 
+                        margin: 0, 
+                        textTransform: "uppercase",
+                        letterSpacing: "2px",
+                        lineHeight: 1.1,
+                      }}
+                    >
+                      {item.title}
+                    </div>
+                    <div 
+                      className="mono" 
+                      style={{ 
+                        color: "var(--yellow)", 
+                        fontSize: "1rem", 
+                        textTransform: "uppercase", 
+                        letterSpacing: "3px", 
+                        display: "block", 
+                        marginTop: "1rem" 
+                      }}
+                    >
+                      Brand Identity
+                    </div>
+                  </div>
+                </div>
+              ) : item.heroYoutubeId ? (
                 <iframe 
                   width="100%" 
                   height="100%" 
@@ -55,12 +111,7 @@ export default async function CampaignPage({ params }: { params: Promise<{ id: s
                   playsInline
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                 />
-              ) : (
-                <div 
-                  className={`wi-visual ${item.visual}`} 
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-                />
-              )}
+              ) : null}
             </div>
           </div>
         </section>

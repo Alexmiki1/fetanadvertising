@@ -58,11 +58,8 @@ export function ServiceGrid() {
             }
 
             return (
-              <a
+              <div
                 key={service.index}
-                href={service.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="service-card"
               >
                 <span className="sc-index mono">{service.index}</span>
@@ -72,7 +69,7 @@ export function ServiceGrid() {
                   </h3>
                   <p className="sc-desc">{service.desc}</p>
                 </div>
-              </a>
+              </div>
             );
           })}
         </Reveal>
