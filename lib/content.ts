@@ -500,16 +500,13 @@ export const clientsSection = {
 } as const;
 
 export const clients = [
-  "Retail Group",
-  "Horizon Bank",
-  "Nova Telecom",
-  "Meskel Events Co.",
-  "Habesha Beverages",
-  "Addis Mall",
-  "Sheba Insurance",
-  "Tana Airlines",
-  "Kaldi Coffee Co.",
-  "Blue Nile Logistics",
+  { name: "Dashen Bank", logo: "/images/clients/client1.png" },
+  { name: "Alpha Post Tension", logo: "/images/clients/client2.png" },
+  { name: "Horra Corporate Group", logo: "/images/clients/client3.png" },
+  { name: "Bamacon Construction", logo: "/images/clients/client4.png" },
+  { name: "BDO", logo: "/images/clients/client5.png" },
+  { name: "Dahabshiil", logo: "/images/clients/client6.png" },
+  { name: "Yango", logo: "/images/clients/client7.png" },
 ] as const;
 
 export const testimonialsSection = {

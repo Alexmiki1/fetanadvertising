@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter, League_Spartan } from "next/font/google";
 import { siteMeta } from "@/lib/content";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const leagueSpartan = League_Spartan({
@@ -40,7 +41,10 @@ export default function RootLayout({
       className={`${leagueSpartan.variable} ${inter.variable} ${ibmPlexMono.variable}`}
       style={{ colorScheme: "light" }}
     >
-      <body className={ibmPlexMono.className}>{children}</body>
+      <body className={ibmPlexMono.className}>
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }
