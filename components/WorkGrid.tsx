@@ -33,54 +33,8 @@ function WorkCard({ item }: { item: WorkItem }) {
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
-      <div className={`wi-visual ${item.visual}`} style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-        {item.category === "branding" ? (
-          <>
-            <div
-              className="display"
-              style={{
-                fontSize: "clamp(3rem, 8vw, 6rem)",
-                color: "rgba(255, 255, 255, 0.04)",
-                whiteSpace: "nowrap",
-                position: "absolute",
-                pointerEvents: "none",
-                userSelect: "none",
-                transform: "rotate(-2deg) scale(1.1)",
-                fontWeight: 900,
-              }}
-            >
-              {item.title} {item.title}
-            </div>
-            <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 20px" }}>
-              <div 
-                className="display" 
-                style={{ 
-                  fontSize: "clamp(1.5rem, 3vw, 2.5rem)", 
-                  color: "var(--white)", 
-                  margin: 0, 
-                  textTransform: "uppercase",
-                  letterSpacing: "2px",
-                  lineHeight: 1.1,
-                }}
-              >
-                {item.title}
-              </div>
-              <div 
-                className="mono" 
-                style={{ 
-                  color: "var(--yellow)", 
-                  fontSize: "0.75rem", 
-                  textTransform: "uppercase", 
-                  letterSpacing: "3px", 
-                  display: "block", 
-                  marginTop: "0.75rem" 
-                }}
-              >
-                Brand Identity
-              </div>
-            </div>
-          </>
-        ) : item.heroImage ? (
+      <div className={`wi-visual ${item.visual}`}>
+        {item.heroImage ? (
           <img
             src={item.heroImage}
             alt={item.title}
@@ -94,10 +48,19 @@ function WorkCard({ item }: { item: WorkItem }) {
           />
         ) : null}
       </div>
-      {item.videoSrc ? (
+      {item.heroYoutubeId ? (
+        <iframe
+          className="wi-video"
+          src={`https://www.youtube.com/embed/${item.heroYoutubeId}?autoplay=1&mute=1&loop=1&playlist=${item.heroYoutubeId}&controls=0`}
+          title={item.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style={{ border: "none", pointerEvents: "none", width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      ) : item.videoSrc ? (
         <video
           ref={videoRef}
           className="wi-video"
+          autoPlay
           muted
           loop
           playsInline
@@ -108,7 +71,7 @@ function WorkCard({ item }: { item: WorkItem }) {
       ) : null}
       <div className="wi-overlay" />
       <span className="wi-tag mono">{item.tag}</span>
-      {item.videoSrc ? <span className="wi-play mono">▶ Video</span> : null}
+      {item.videoSrc || item.heroYoutubeId ? <span className="wi-play mono">▶ Video</span> : null}
       <div className="wi-body">
         <h3 className="display">{item.title}</h3>
         <p>{item.description}</p>

@@ -7,9 +7,10 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   as?: "div" | "section";
+  style?: React.CSSProperties;
 };
 
-export function Reveal({ children, className = "", as = "div" }: RevealProps) {
+export function Reveal({ children, className = "", as = "div", style }: RevealProps) {
   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.15 });
   const Tag = as;
   const classes = ["reveal", inView ? "in" : "", className]
@@ -17,7 +18,7 @@ export function Reveal({ children, className = "", as = "div" }: RevealProps) {
     .join(" ");
 
   return (
-    <Tag ref={ref} className={classes}>
+    <Tag ref={ref} className={classes} style={style}>
       {children}
     </Tag>
   );

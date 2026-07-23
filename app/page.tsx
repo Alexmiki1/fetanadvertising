@@ -2,6 +2,7 @@ import { IntroOverlay } from "@/components/IntroOverlay";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { VideoBanner } from "@/components/VideoBanner";
+import { AboutUs } from "@/components/AboutUs";
 import { WhyFetan } from "@/components/WhyFetan";
 import { ServicesTicker } from "@/components/ServicesTicker";
 import { ShowreelPlayer } from "@/components/ShowreelPlayer";
@@ -23,6 +24,7 @@ export default function Home() {
       <main id="top">
         <Hero />
         <VideoBanner />
+        <AboutUs />
         <WhyFetan />
         <ServicesTicker />
         <ShowreelPlayer />

@@ -78,8 +78,8 @@ export const siteMeta = {
     "Fetan Advertising is a full service creative agency covering outdoor media, digital marketing, branding, print, and live events.",
   email:
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@fetanadvertising.com",
-  phone: "+251 90 000 0000",
-  phoneHref: "tel:+251900000000",
+  phone: "0913001010",
+  phoneHref: "tel:0913001010",
   location: "Haile Gebre Silase St, Addis Ababa, Ethiopia",
   mapsEmbedSrc:
     "https://www.google.com/maps?q=Fetan+Advertising,+Haile+Gebre+Silase+St,+Addis+Ababa&hl=en&z=16&output=embed",
@@ -113,6 +113,19 @@ export const videoBannerContent = {
   secondaryCta: { href: "#contact", label: "Start A Project" },
   leftText: ["Just What Your Brand", "Needs."],
   rightText: ["Creative Advertising Agency", "In Addis."],
+} as const;
+
+export const aboutContent = {
+  eyebrow: "WHO ARE WE",
+  heading: "THE\nCREATIVE\nREBELLION",
+  button: {
+    label: "ABOUT US",
+    href: "/#about",
+  },
+  paragraphs: [
+    "Fetan Advertising is a creative production house in Ethiopia made up of filmmakers, strategists, and visual storytellers who believe in the power of fearless ideas. What started as a small team focused on visual storytelling has grown into a full-service production company providing video production, photography services, and film fixing support in Ethiopia.",
+    "We do more than create content. We build stories that combine emotion with strategy. Every project becomes a collaboration between vision and execution, brand and audience, imagination and impact. Our team of experienced videographers, photographers, and production specialists works closely with our clients to deliver."
+  ]
 } as const;
 
 export const whyFetanSlides: WhyFetanSlide[] = [
