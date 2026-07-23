@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { navLinks } from "@/lib/content";
 
 export function Header() {
@@ -46,9 +47,9 @@ export function Header() {
         .join(" ") || undefined}
     >
       <div className="wrap">
-        <a href="#top" className="logo">
+        <Link href="/" className="logo">
           FET<span>A</span>N
-        </a>
+        </Link>
         <nav>
           <button
             type="button"
@@ -61,25 +62,28 @@ export function Header() {
           </button>
           <div className={`nav-links${menuOpen ? " open" : ""}`}>
             <ul>
-              {navLinks.map((link) => (
-                <li key={link.href + link.label}>
-                  <a
-                    href={link.href}
-                    className={[
-                      link.href === "#top" ? "active" : "",
-                      link.cta ? "cta-nav" : "",
-                    ]
-                      .filter(Boolean)
-                      .join(" ")}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.label}
-                    {link.chevron ? (
-                      <span className="nav-chevron">▾</span>
-                    ) : null}
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+                return (
+                  <li key={link.href + link.label}>
+                    <Link
+                      href={href}
+                      className={[
+                        link.href === "#top" ? "active" : "",
+                        link.cta ? "cta-nav" : "",
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                      {link.chevron ? (
+                        <span className="nav-chevron">▾</span>
+                      ) : null}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </nav>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { footerContent, siteMeta } from "@/lib/content";
 
 export function Footer() {
@@ -6,29 +7,37 @@ export function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <div className="footer-brand">
-            <div className="logo">
-              FET<span>A</span>N
-            </div>
+            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <div className="logo">
+                FET<span>A</span>N
+              </div>
+            </Link>
             <p>{footerContent.brandCopy}</p>
           </div>
           <div className="foot-col">
             <h5>Services</h5>
             <ul>
-              {footerContent.services.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
+              {footerContent.services.map((link) => {
+                const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+                return (
+                  <li key={link.label}>
+                    <Link href={href}>{link.label}</Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="foot-col">
             <h5>Agency</h5>
             <ul>
-              {footerContent.agency.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
+              {footerContent.agency.map((link) => {
+                const href = link.href.startsWith("#") ? `/${link.href}` : link.href;
+                return (
+                  <li key={link.label}>
+                    <Link href={href}>{link.label}</Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="foot-col">
