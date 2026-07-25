@@ -123,8 +123,8 @@ export const aboutContent = {
     href: "/#about",
   },
   paragraphs: [
-    "Fetan Advertising is a creative production house in Ethiopia made up of filmmakers, strategists, and visual storytellers who believe in the power of fearless ideas. What started as a small team focused on visual storytelling has grown into a full-service production company providing video production, photography services, and film fixing support in Ethiopia.",
-    "We do more than create content. We build stories that combine emotion with strategy. Every project becomes a collaboration between vision and execution, brand and audience, imagination and impact. Our team of experienced videographers, photographers, and production specialists works closely with our clients to deliver."
+    "Fetan Advertising is an advertising and creative agency in Ethiopia dedicated to helping businesses grow through innovative marketing, creative storytelling, and impactful brand experiences. We specialize in outdoor advertising, digital LED screen advertising, printing, graphic design, exhibition booths, event branding, digital marketing, and brand strategy, providing complete advertising solutions tailored to the unique goals of every client. From designing eye catching campaigns and producing high quality print materials to managing digital marketing initiatives and delivering large scale advertising projects, we combine creativity, technology, and strategic thinking to ensure every campaign reaches the right audience and delivers meaningful results.",
+    "Our team works closely with businesses, organizations, and institutions to transform ideas into powerful campaigns that strengthen brand identity, increase visibility, engage customers, and create lasting impressions. Whether launching a new product, promoting a service, or building long term brand awareness, we are committed to delivering innovative solutions that help our clients stand out in a competitive market and achieve measurable success."
   ]
 } as const;
 
@@ -507,6 +507,8 @@ export const clients = [
   { name: "BDO", logo: "/images/clients/client5.png" },
   { name: "Dahabshiil", logo: "/images/clients/client6.png" },
   { name: "Yango", logo: "/images/clients/client7.png" },
+  { name: "App Logo J", logo: "/images/clients/client8.png" },
+  { name: "Horra Real Estate", logo: "/images/clients/client9.png" },
 ] as const;
 
 export const testimonialsSection = {
