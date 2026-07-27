@@ -14,17 +14,12 @@
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{
-    scroll-behavior:smooth;
-    overflow-x:hidden;
-    max-width:100%;
-  }
+  html{scroll-behavior:smooth;}
   body{
     background:var(--white);
     color:var(--black);
     font-family:var(--font-mono),'IBM Plex Mono',monospace;
     overflow-x:hidden;
-    max-width:100%;
     -webkit-font-smoothing:antialiased;
   }
   ::selection{background:var(--yellow);color:var(--black);}
