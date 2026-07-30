@@ -3,7 +3,7 @@ import { Resend } from "resend";
 type QuotePayload = {
   name: string;
   email: string;
-  phone?: string;
+  phone: string;
   company?: string;
   service: string;
   message: string;
@@ -20,6 +20,7 @@ function parsePayload(body: unknown): QuotePayload | null {
   if (
     !isNonEmptyString(data.name) ||
     !isNonEmptyString(data.email) ||
+    !isNonEmptyString(data.phone) ||
     !isNonEmptyString(data.service) ||
     !isNonEmptyString(data.message)
   ) {
@@ -29,7 +30,7 @@ function parsePayload(body: unknown): QuotePayload | null {
   return {
     name: data.name.trim(),
     email: data.email.trim(),
-    phone: isNonEmptyString(data.phone) ? data.phone.trim() : undefined,
+    phone: data.phone.trim(),
     company: isNonEmptyString(data.company) ? data.company.trim() : undefined,
     service: data.service.trim(),
     message: data.message.trim(),
@@ -60,7 +61,7 @@ export async function POST(request: Request) {
   const payload = parsePayload(json);
   if (!payload) {
     return Response.json(
-      { error: "Please fill in name, email, service, and project details." },
+      { error: "Please fill in name, email, phone, service, and project details." },
       { status: 400 },
     );
   }
@@ -71,7 +72,7 @@ export async function POST(request: Request) {
     from,
     to: [to],
     replyTo: payload.email,
-    subject: `Quote request — ${payload.service} — ${payload.name}`,
+    subject: `New Sales Lead — ${payload.service} — ${payload.name}`,
     text: [
       `Name: ${payload.name}`,
       `Email: ${payload.email}`,

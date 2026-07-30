@@ -89,8 +89,8 @@ export const siteMeta = {
   siteUrl: "https://fetanadvertising.com",
   email:
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@fetanadvertising.com",
-  phone: "0913001010",
-  phoneHref: "tel:0913001010",
+  phone: "+251913001010",
+  phoneHref: "tel:+251913001010",
   location: "Haile Gebre Silase St, Addis Ababa, Ethiopia",
   mapsEmbedSrc:
     "https://www.google.com/maps?q=Fetan+Advertising,+Haile+Gebre+Silase+St,+Addis+Ababa&hl=en&z=16&output=embed",

@@ -142,10 +142,11 @@ export function QuoteContact() {
 
               <div className="quote-row">
                 <label className="quote-field">
-                  <span className="mono">Phone</span>
+                  <span className="mono">Phone *</span>
                   <input
                     type="tel"
                     name="phone"
+                    required
                     autoComplete="tel"
                     value={form.phone}
                     onChange={(e) => update("phone", e.target.value)}
