@@ -73,9 +73,20 @@ export type Testimonial = {
 };
 
 export const siteMeta = {
-  title: "Fetan Advertising | Full Service Creative Agency",
+  title: "Fetan Advertising | Full Service Creative Agency in Addis Ababa",
   description:
-    "Fetan Advertising is a full service creative agency covering outdoor media, digital marketing, branding, print, and live events.",
+    "Fetan Advertising is a top full-service creative agency in Addis Ababa, Ethiopia, specializing in outdoor media, digital marketing, branding, video production, and live events.",
+  keywords: [
+    "Advertising agency in Addis Ababa",
+    "Creative agency Ethiopia",
+    "Outdoor media Addis Ababa",
+    "Digital marketing Ethiopia",
+    "Branding agency Addis Ababa",
+    "Video production Ethiopia",
+    "Live events Addis Ababa",
+    "Fetan Advertising"
+  ],
+  siteUrl: "https://fetanadvertising.com",
   email:
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@fetanadvertising.com",
   phone: "0913001010",
@@ -108,7 +119,7 @@ export const heroContent = {
 } as const;
 
 export const videoBannerContent = {
-  videoSrc: "/videos/banner.mp4",
+  imageSrc: "/images/banner_image.png",
   primaryCta: { href: "#work", label: "See Our Work" },
   secondaryCta: { href: "#contact", label: "Start A Project" },
   leftText: ["Just What Your Brand", "Needs."],
@@ -143,36 +154,33 @@ export const whyFetanSlides: WhyFetanSlide[] = [
   {
     kind: "value",
     num: "01",
-    word: "EMOTION",
-    line: "We Move People, Not Just Metrics.",
-    desc: "We tell stories that make audiences feel, because emotion builds connection, and connection builds brands that last.",
+    word: "BIG IDEAS",
+    line: "Big ideas win.",
+    desc: "",
     bg: "wf-bg2",
-    image: "/images/why-fetan/emotion-crew.png",
-    imageAlt:
-      "Fetan crew on location with cinema camera and gimbal during a golden-hour shoot",
+    image: "/images/why-fetan/big_ideas_habesha.png",
+    imageAlt: "Habeshan Ethiopian creative team brainstorming big ideas",
   },
   {
     kind: "value",
     num: "02",
-    word: "FEARLESS",
-    line: "Chaos Is Where We Create.",
-    desc: "We don't play it safe. We experiment, break the format, and rebuild campaigns into something bold, loud, and alive.",
+    word: "SIMPLICITY",
+    line: "Simplicity is the ultimate sophistication.",
+    desc: "",
     bg: "wf-bg3",
-    image: "/images/why-fetan/fearless-production.png",
-    imageAlt:
-      "Professional production monitor and wireless transmitter filming a city sunset",
+    image: "/images/why-fetan/simplicity.png",
+    imageAlt: "Sleek modern camera on soundstage",
   },
   {
     kind: "value",
     num: "03",
-    word: "AUTHENTIC",
-    line: "We Keep It Real. Always.",
-    desc: "No fluff, just honest creative that speaks to real people, in real streets, across real Ethiopia.",
+    word: "AUTHENTICITY",
+    line: "Authenticity over everything.",
+    desc: "",
     bg: "wf-bg4",
     image: "/images/why-fetan/authentic-heritage.png",
-    imageAlt:
-      "People in traditional Ethiopian dress taking a selfie at a historic stone castle",
-  },
+    imageAlt: "People in traditional Ethiopian dress taking a selfie at a historic stone castle",
+  }
 ];
 
 export const tickerServices = [
@@ -190,7 +198,7 @@ export const showreelContent = {
   heading: "The\nShowreel",
   subcopy:
     "A minute of what we ship across outdoor, digital, and live production, cut together.",
-  videoSrc: "/videos/showreel.mp4",
+  youtubeId: "dctCqmgbwfw",
 } as const;
 
 export const servicesSection = {

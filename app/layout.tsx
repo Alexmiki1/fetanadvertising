@@ -28,6 +28,32 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: siteMeta.title,
   description: siteMeta.description,
+  keywords: siteMeta.keywords,
+  metadataBase: new URL(siteMeta.siteUrl),
+  openGraph: {
+    title: siteMeta.title,
+    description: siteMeta.description,
+    url: siteMeta.siteUrl,
+    siteName: "Fetan Advertising",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteMeta.title,
+    description: siteMeta.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

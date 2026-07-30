@@ -1,56 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
 import { showreelContent } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 import { useInView } from "@/hooks/useInView";
 
-function formatTime(t: number): string {
-  const m = Math.floor(t / 60)
-    .toString()
-    .padStart(2, "0");
-  const s = Math.floor(t % 60)
-    .toString()
-    .padStart(2, "0");
-  return `${m}:${s}`;
-}
-
 export function ShowreelPlayer() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const { ref: frameRef, inView } = useInView<HTMLDivElement>({
     threshold: 0.15,
   });
-  const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [progress, setProgress] = useState(0);
-
-  function togglePlay() {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      void video.play();
-      setPlaying(true);
-    } else {
-      video.pause();
-      setPlaying(false);
-    }
-  }
-
-  function onTimeUpdate() {
-    const video = videoRef.current;
-    if (!video || !video.duration) return;
-    setProgress((video.currentTime / video.duration) * 100);
-    setCurrentTime(video.currentTime);
-  }
-
-  function toggleMute(e: React.MouseEvent) {
-    e.stopPropagation();
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = !video.muted;
-    setMuted(video.muted);
-  }
 
   const headingLines = showreelContent.heading.split("\n");
 
@@ -69,50 +26,16 @@ export function ShowreelPlayer() {
           ref={frameRef}
           className={`reel-frame reveal${inView ? " in" : ""}`}
           id="reelFrame"
-          onClick={(e) => {
-            if ((e.target as HTMLElement).closest(".reel-mute")) return;
-            togglePlay();
-          }}
         >
-          <video
-            ref={videoRef}
+          <iframe
             className="reel-video"
-            muted={muted}
-            loop
-            playsInline
-            preload="metadata"
-            poster=""
-            onTimeUpdate={onTimeUpdate}
-          >
-            <source src={showreelContent.videoSrc} type="video/mp4" />
-          </video>
-          <div className="reel-scan" />
-          <button
-            type="button"
-            className={`reel-play${playing ? " is-playing" : ""}`}
-            aria-label={playing ? "Pause showreel" : "Play showreel"}
-          >
-            <span className="reel-ring" />
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden>
-              <path d="M8 5v14l11-7z" fill="currentColor" />
-            </svg>
-          </button>
-          <div className="reel-bar">
-            <span className="reel-time mono">{formatTime(currentTime)}</span>
-            <div className="reel-progress">
-              <div
-                className="reel-progress-fill"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-            <button
-              type="button"
-              className="reel-mute mono"
-              onClick={toggleMute}
-            >
-              {muted ? "MUTE" : "UNMUTE"}
-            </button>
-          </div>
+            src={`https://www.youtube.com/embed/${showreelContent.youtubeId}?autoplay=1&mute=1&rel=0&showinfo=0`}
+            title="Showreel"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </section>

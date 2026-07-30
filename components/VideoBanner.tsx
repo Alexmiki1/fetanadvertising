@@ -1,12 +1,16 @@
+import Image from "next/image";
 import { videoBannerContent } from "@/lib/content";
 
 export function VideoBanner() {
   return (
     <section className="video-banner">
       <div className="video-banner-media">
-        <video autoPlay muted loop playsInline poster="">
-          <source src={videoBannerContent.videoSrc} type="video/mp4" />
-        </video>
+        <Image 
+          src={videoBannerContent.imageSrc} 
+          alt="Creative Advertising Agency"
+          fill
+          style={{ objectFit: 'cover' }}
+        />
         <div className="video-banner-overlay" />
       </div>
       <div className="video-banner-actions">
