@@ -11,15 +11,8 @@ export function Clients() {
       <div className="client-grid">
         <style>{`
           .client-cell .client-img {
-            filter: grayscale(100%) brightness(0) invert(1);
-            opacity: 0.5;
-            transition: all 0.3s ease;
+            filter: grayscale(100%) brightness(0) invert(0.6);
             object-fit: contain;
-          }
-          .client-cell:hover .client-img {
-            filter: none;
-            opacity: 1;
-            transform: scale(1.06);
           }
         `}</style>
         {clients.map((client) => (

@@ -1,5 +1,6 @@
 import { services, servicesSection } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
+import Link from "next/link";
 
 function ServiceName({ name }: { name: string }) {
   const parts = name.split("\n");
@@ -33,7 +34,8 @@ export function ServiceGrid() {
           {services.map((service) => {
             if (service.highlight) {
               return (
-                <div
+                <Link
+                  href={service.href ?? "#"}
                   key={service.name}
                   className="service-card"
                   style={{ background: "var(--yellow)" }}
@@ -53,12 +55,13 @@ export function ServiceGrid() {
                       {service.desc}
                     </p>
                   </div>
-                </div>
+                </Link>
               );
             }
 
             return (
-              <div
+              <Link
+                href={service.href ?? "#"}
                 key={service.index}
                 className="service-card"
               >
@@ -69,7 +72,7 @@ export function ServiceGrid() {
                   </h3>
                   <p className="sc-desc">{service.desc}</p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </Reveal>

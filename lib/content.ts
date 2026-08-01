@@ -27,6 +27,7 @@ export type WhyFetanSlide =
     };
 
 export type ServiceItem = {
+  id?: string;
   index: string;
   name: string;
   nameBreak?: boolean;
@@ -103,6 +104,8 @@ export const navLinks: NavLink[] = [
   { href: "#services", label: "Services", chevron: true },
   { href: "#work", label: "Work" },
   { href: "#about", label: "About Us" },
+  { href: "https://www.fetanled.com/", label: "Fetan LED" },
+  { href: "https://outdoor.fetanadvertising.com/", label: "Outdoor" },
   { href: "#contact", label: "Start a Campaign", cta: true },
 ];
 
@@ -209,57 +212,66 @@ export const servicesSection = {
 
 export const services: ServiceItem[] = [
   {
+    id: "outdoor-advertising",
     index: "OOH",
     name: "Outdoor\nAdvertising",
     desc: "Billboard Advertising has been around for a while and still works well. Fetan keeps it effective by being interesting and innovative.",
-    href: "https://outdoor.fetanadvertising.com/",
+    href: "/services/outdoor-advertising",
   },
   {
+    id: "printing",
     index: "PRT",
     name: "Printing",
     desc: "Bring your ideas to life with our exceptional printing services. We use state-of-the-art technology to deliver high-quality prints for all your needs.",
-    href: "https://fetanadvertising.com/marketing/",
+    href: "/services/printing",
   },
   {
+    id: "strategy",
     index: "STR",
     name: "Strategy",
     desc: "A skyscraper can only be built as tall as the depth of the foundation, so do your brands.",
-    href: "https://fetanadvertising.com/strategy/",
+    href: "/services/strategy",
   },
   {
+    id: "design",
     index: "DSN",
     name: "Design",
     desc: "We're artists at heart and we believe in the transformative power of brilliant design.",
-    href: "https://fetanadvertising.com/design/",
+    href: "/services/design",
   },
   {
+    id: "exhibition-booth",
     index: "EXH",
     name: "Exhibition\nBooth",
     desc: "Tired of exhibitions that blend into the background? We don't do generic. Our exhibition design strategies are tailored to turn heads, engage minds, and leave a lasting impression.",
-    href: "https://fetanadvertising.com/exhibition-booth/",
+    href: "/services/exhibition-booth",
   },
   {
+    id: "advertising",
     index: "ADV",
     name: "Advertising",
     desc: "When you hear the word advertising, what comes to mind? The billboards along the highway, TV or Radio ads, or posters on delivery trucks?",
-    href: "https://fetanadvertising.com/advertising/",
+    href: "/services/advertising",
   },
   {
+    id: "event",
     index: "EVT",
     name: "Event",
     desc: "No matter what your corporate occasion, we know that every single detail reflects your brand. And every single detail must be perfect.",
-    href: "https://fetanadvertising.com/event/",
+    href: "/services/event",
   },
   {
+    id: "marketing",
     index: "MKT",
     name: "Marketing",
     desc: "There is a multifaceted digital world that we all live in. To be seen in the digital age means you have to have a digital presence.",
-    href: "https://fetanadvertising.com/marketing/",
+    href: "/services/marketing",
   },
   {
     index: "",
     name: "Let's Roll\nCamera",
     desc: "One agency, every discipline. Talk to our team.",
+    href: "/#contact",
     highlight: true,
   },
 ];
@@ -285,7 +297,7 @@ export const workItems: WorkItem[] = [
     title: "Abay Homes",
     description: "Citywide billboard rollout across 40 sites over 6 weeks.",
     visual: "g1",
-    heroImage: "/images/abay-2.png",
+    heroImage: "/images/abay-1.png",
     details: {
       intro: "The branding for Abay Homes was created to establish the company as a modern, trustworthy, and premium real estate developer in Ethiopia’s growing housing market. The goal was to build a strong visual identity that reflects quality construction, modern urban living, and long-term investment value while appealing to both local homeowners and diaspora investors.\n\nThe brand identity combines professionalism, elegance, and reliability through clean visuals, modern typography, and a refined real estate aesthetic that communicates comfort, trust, and contemporary living.",
       sections: [
@@ -323,7 +335,7 @@ export const workItems: WorkItem[] = [
     title: "Dema Hope",
     description: "Paid social + content push for a retail launch.",
     visual: "g2",
-    heroImage: "/images/dema-1.png",
+    heroImage: "/images/dema-2.png",
     details: {
       intro: "The branding and logo project for Dema Hope Real Estate focused on building a premium and modern visual identity that reflects luxury living, trust, and high-end real estate development in Ethiopia. The brand was designed to position Dema Hope as a leading real estate company offering upscale residential and commercial properties in Addis Ababa’s most desirable neighborhoods.\n\nThe identity combines elegance, professionalism, and modern urban lifestyle aesthetics while supporting the company’s long-term vision of redefining luxury real estate in Ethiopia. The branding also needed to communicate the company’s philosophy: “Dream. Elevate. Master. Achieve.",
       sections: [
@@ -361,7 +373,7 @@ export const workItems: WorkItem[] = [
     title: "ALPHA POST TENSTION PLC",
     description: "Logo, system, and guidelines for an engineering client.",
     visual: "g3",
-    heroImage: "/images/alpha-hero.png",
+    heroImage: "/images/alpha-1.png",
     details: {
       intro: "Alpha Post Tension PLC is a Grade One specialized post-tension company registered in Ethiopia, established by Ethiopian professionals with extensive technical knowledge and hands-on experience gained across the Middle East. The company delivers advanced post-tension engineering solutions for modern construction projects, combining international standards with local expertise.\n\nThe objective of this project was to create a strong and professional brand presence that reflects the company’s technical excellence, reliability, and innovation in the construction industry. The visual identity and communication materials were designed to showcase Alpha Post Tension PLC as a trusted engineering partner capable of delivering high-performance structural solutions for complex construction developments.\n\nThe branding approach focused on creating a clean, modern, and industrial visual language that communicates strength, precision, and professionalism while positioning the company competitively within the Ethiopian construction sector.",
       sections: [
@@ -399,7 +411,7 @@ export const workItems: WorkItem[] = [
     title: "Bamacon",
     description: "Live launch event for 800 guests, full staging.",
     visual: "g4",
-    heroImage: "/images/bama-5.png",
+    heroImage: "/images/bama-1.png",
     details: {
       intro: "The branding and logo project for Bamacon Engineering PLC focused on creating a strong and professional identity that reflects the company’s position as a Grade 1 construction and engineering firm in Ethiopia. The brand needed to communicate trust, strength, innovation, and modern construction expertise while representing Bamacon’s large-scale projects, sister companies, and growing presence in the engineering and real estate industry. The visual identity was designed to align with the company’s mission of delivering high-quality engineering, construction, and infrastructure solutions.",
       sections: [
@@ -602,9 +614,9 @@ export const footerContent = {
     { href: "#contact", label: "Contact" },
   ],
   socials: [
-    { href: "#", label: "Instagram" },
-    { href: "#", label: "LinkedIn" },
-    { href: "#", label: "Behance" },
+    { href: "https://www.instagram.com/fetanads?igsh=dnhjcWpsaHc0N3l0", label: "Instagram" },
+    { href: "https://www.linkedin.com/company/fetanadvertising/", label: "LinkedIn" },
+    { href: "https://web.facebook.com/fetanads", label: "Facebook" },
   ],
   copyright: "© 2026 Fetan Advertising. All rights reserved.",
 } as const;

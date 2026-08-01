@@ -11,7 +11,7 @@ import {
 } from "@/lib/content";
 import { Reveal } from "@/components/Reveal";
 
-function WorkCard({ item }: { item: WorkItem }) {
+export function WorkCard({ item }: { item: WorkItem }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   function onEnter() {
@@ -41,9 +41,8 @@ function WorkCard({ item }: { item: WorkItem }) {
             style={{
               width: "100%",
               height: "100%",
-              objectFit: "cover",
-              mixBlendMode: "overlay",
-              opacity: 0.8,
+              objectFit: "contain",
+              padding: "40px",
             }}
           />
         ) : null}
