@@ -40,3 +40,27 @@ export default function Home() {
     </>
   );
 }
+
+// force reload
+
+// force reload 2
+
+// force reload 3
+
+// force reload 4
+
+// force reload 5
+
+// force reload 6
+
+// force reload 7
+
+// force reload 8
+
+// force reload 9
+
+// force reload 10
+
+// force reload 11
+
+// force reload 12

@@ -17,7 +17,7 @@ export function Clients() {
         `}</style>
         {clients.map((client) => (
           <div key={client.name} className="client-cell">
-            <div style={{ position: 'relative', width: '140px', height: '70px' }}>
+            <div style={{ position: 'relative', width: '140px', height: '70px', transform: client.scale ? `scale(${client.scale})` : undefined }}>
               <Image 
                 src={client.logo} 
                 alt={client.name} 

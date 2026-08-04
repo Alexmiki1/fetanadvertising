@@ -36,7 +36,7 @@ export type ServiceItem = {
   highlight?: boolean;
 };
 
-export type WorkCategory = "all" | "outdoor" | "digital" | "branding" | "events";
+export type WorkCategory = "all" | "outdoor" | "digital" | "branding" | "events" | "printing";
 
 export type WorkItem = {
   id: string;
@@ -48,6 +48,7 @@ export type WorkItem = {
   videoSrc?: string;
   heroYoutubeId?: string;
   heroImage?: string;
+  hideFromHome?: boolean;
   details?: {
     intro?: string;
     sections?: {
@@ -57,6 +58,7 @@ export type WorkItem = {
       image?: string;
       youtubeId?: string;
     }[];
+    gallery?: string[];
   };
 };
 
@@ -287,6 +289,7 @@ export const workFilters: { id: WorkCategory; label: string }[] = [
   { id: "digital", label: "Digital" },
   { id: "branding", label: "Branding" },
   { id: "events", label: "Events" },
+  { id: "printing", label: "Printing" },
 ];
 
 export const workItems: WorkItem[] = [
@@ -297,7 +300,7 @@ export const workItems: WorkItem[] = [
     title: "Abay Homes",
     description: "Citywide billboard rollout across 40 sites over 6 weeks.",
     visual: "g1",
-    heroImage: "/images/abay-1.png",
+    heroImage: "/images/abay-home.jpg",
     details: {
       intro: "The branding for Abay Homes was created to establish the company as a modern, trustworthy, and premium real estate developer in Ethiopia’s growing housing market. The goal was to build a strong visual identity that reflects quality construction, modern urban living, and long-term investment value while appealing to both local homeowners and diaspora investors.\n\nThe brand identity combines professionalism, elegance, and reliability through clean visuals, modern typography, and a refined real estate aesthetic that communicates comfort, trust, and contemporary living.",
       sections: [
@@ -333,9 +336,9 @@ export const workItems: WorkItem[] = [
     category: "branding",
     tag: "Branding",
     title: "Dema Hope",
-    description: "Paid social + content push for a retail launch.",
-    visual: "g2",
-    heroImage: "/images/dema-2.png",
+    description: "Comprehensive branding and logo design for Dema Hope Real Estate, establishing a premium and modern visual identity.",
+    visual: "g3",
+    heroImage: "/images/dema-home.png",
     details: {
       intro: "The branding and logo project for Dema Hope Real Estate focused on building a premium and modern visual identity that reflects luxury living, trust, and high-end real estate development in Ethiopia. The brand was designed to position Dema Hope as a leading real estate company offering upscale residential and commercial properties in Addis Ababa’s most desirable neighborhoods.\n\nThe identity combines elegance, professionalism, and modern urban lifestyle aesthetics while supporting the company’s long-term vision of redefining luxury real estate in Ethiopia. The branding also needed to communicate the company’s philosophy: “Dream. Elevate. Master. Achieve.",
       sections: [
@@ -373,7 +376,7 @@ export const workItems: WorkItem[] = [
     title: "ALPHA POST TENSTION PLC",
     description: "Logo, system, and guidelines for an engineering client.",
     visual: "g3",
-    heroImage: "/images/alpha-1.png",
+    heroImage: "/images/alpha-home.png",
     details: {
       intro: "Alpha Post Tension PLC is a Grade One specialized post-tension company registered in Ethiopia, established by Ethiopian professionals with extensive technical knowledge and hands-on experience gained across the Middle East. The company delivers advanced post-tension engineering solutions for modern construction projects, combining international standards with local expertise.\n\nThe objective of this project was to create a strong and professional brand presence that reflects the company’s technical excellence, reliability, and innovation in the construction industry. The visual identity and communication materials were designed to showcase Alpha Post Tension PLC as a trusted engineering partner capable of delivering high-performance structural solutions for complex construction developments.\n\nThe branding approach focused on creating a clean, modern, and industrial visual language that communicates strength, precision, and professionalism while positioning the company competitively within the Ethiopian construction sector.",
       sections: [
@@ -411,7 +414,7 @@ export const workItems: WorkItem[] = [
     title: "Bamacon",
     description: "Live launch event for 800 guests, full staging.",
     visual: "g4",
-    heroImage: "/images/bama-1.png",
+    heroImage: "/images/bamacon-home.png",
     details: {
       intro: "The branding and logo project for Bamacon Engineering PLC focused on creating a strong and professional identity that reflects the company’s position as a Grade 1 construction and engineering firm in Ethiopia. The brand needed to communicate trust, strength, innovation, and modern construction expertise while representing Bamacon’s large-scale projects, sister companies, and growing presence in the engineering and real estate industry. The visual identity was designed to align with the company’s mission of delivering high-quality engineering, construction, and infrastructure solutions.",
       sections: [
@@ -500,6 +503,64 @@ export const workItems: WorkItem[] = [
       ]
     }
   },
+  {
+    id: "alpha-exhibition",
+    category: "events",
+    tag: "Events",
+    title: "ALPHA POST TENSION EXHIBITION",
+    description: "Custom exhibition booth design and fabrication for Alpha Post Tension PLC.",
+    visual: "g2",
+    heroImage: "/images/exhibition-1.jpg",
+    hideFromHome: true,
+    details: {
+      intro: "Fetan Advertising partnered with Alpha Post Tension PLC to design, fabricate, and install a custom exhibition booth that stands out in a crowded hall. We focused on striking visual elements, interactive spaces, and clear brand messaging to engage visitors and showcase their technical expertise.",
+      gallery: [
+        "/images/exhibition-1.jpg",
+        "/images/exhibition-2.jpg",
+        "/images/exhibition-3.jpg",
+        "/images/exhibition-4.jpg"
+      ]
+    }
+  },
+  {
+    id: "bamamix-exhibition",
+    category: "events",
+    tag: "Events",
+    title: "BAMAMIX EXHIBITION",
+    description: "Custom exhibition booth design and fabrication for BamaMix Construction Material Manufacturing PLC.",
+    visual: "g3",
+    heroImage: "/images/bamamix-1.jpg",
+    hideFromHome: true,
+    details: {
+      intro: "Fetan Advertising partnered with BamaMix to design and build a modern, high-impact exhibition booth. We focused on striking visual elements, interactive spaces, and clear brand messaging to engage visitors and showcase their products.",
+      gallery: [
+        "/images/bamamix-1.jpg",
+        "/images/bamamix-2.jpg",
+        "/images/bamamix-3.jpg",
+        "/images/bamamix-4.jpg"
+      ]
+    }
+  },
+  {
+    id: "bamamix-printing",
+    category: "printing",
+    tag: "Printing",
+    title: "BAMAMIX MERCHANDISE",
+    description: "Corporate merchandise and print materials designed for BamaMix Construction Material Manufacturing PLC.",
+    visual: "g5",
+    heroImage: "/images/printing-1.jpg",
+    hideFromHome: true,
+    details: {
+      intro: "A cohesive set of branded corporate materials, including custom apparel, business cards, and promotional items designed to strengthen the BamaMix brand identity.",
+      gallery: [
+        "/images/printing-1.jpg",
+        "/images/printing-2.jpg",
+        "/images/printing-3.jpg",
+        "/images/printing-4.jpg",
+        "/images/printing-5.jpg"
+      ]
+    }
+  }
 ];
 
 export const statsSection = {
@@ -519,17 +580,18 @@ export const clientsSection = {
   heading: "Trusted By",
 } as const;
 
-export const clients = [
-  { name: "Dashen Bank", logo: "/images/clients/client1.png" },
-  { name: "Alpha Post Tension", logo: "/images/clients/client2.png" },
-  { name: "Horra Corporate Group", logo: "/images/clients/client3.png" },
-  { name: "Bamacon Construction", logo: "/images/clients/client4.png" },
-  { name: "BDO", logo: "/images/clients/client5.png" },
-  { name: "Dahabshiil", logo: "/images/clients/client6.png" },
-  { name: "Yango", logo: "/images/clients/client7.png" },
-  { name: "App Logo J", logo: "/images/clients/client8.png" },
-  { name: "Horra Real Estate", logo: "/images/clients/client9.png" },
-] as const;
+export const clients: { name: string; logo: string; scale?: number }[] = [
+  { name: "Dashen Bank", logo: "/images/clients/dashen-bank.png", scale: 1.2 },
+  { name: "Alpha Post Tension", logo: "/images/clients/client2.png", scale: 1.6 },
+  { name: "Horra Corporate Group", logo: "/images/clients/client3.png", scale: 1.6 },
+  { name: "Bamacon Construction", logo: "/images/clients/client4.png", scale: 1.6 },
+  { name: "BDO", logo: "/images/clients/client5.png", scale: 1.3 },
+  { name: "Awash Bank", logo: "/images/clients/awash-bank.png", scale: 1.3 },
+  { name: "Zemen Bank", logo: "/images/clients/zemen-bank-v2.png", scale: 1.2 },
+  { name: "Yango", logo: "/images/clients/client7.png", scale: 1.3 },
+  { name: "Coca-Cola", logo: "/images/clients/coca-cola.png", scale: 1.2 },
+  { name: "Scope Lubricants", logo: "/images/clients/scope-lubricants.png", scale: 2.2 },
+];
 
 export const testimonialsSection = {
   eyebrow: "Testimonial",

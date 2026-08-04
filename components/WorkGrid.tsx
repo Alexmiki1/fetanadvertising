@@ -15,14 +15,11 @@ export function WorkCard({ item }: { item: WorkItem }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   function onEnter() {
-    const video = videoRef.current;
-    if (!video) return;
-    video.currentTime = 0;
-    void video.play().catch(() => {});
+    // Only used to reset time if needed, but for constant play we can just let it loop.
   }
 
   function onLeave() {
-    videoRef.current?.pause();
+    // Intentionally empty so video keeps playing
   }
 
   return (
@@ -63,7 +60,7 @@ export function WorkCard({ item }: { item: WorkItem }) {
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
         >
           <source src={item.videoSrc} type="video/mp4" />
         </video>
@@ -83,7 +80,7 @@ export function WorkGrid() {
   const [filter, setFilter] = useState<WorkCategory>("all");
   const headingLines = workSection.heading.split("\n");
   const visible = workItems.filter(
-    (item) => filter === "all" || item.category === filter,
+    (item) => !item.hideFromHome && (filter === "all" || item.category === filter),
   );
 
   return (

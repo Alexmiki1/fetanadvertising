@@ -24,15 +24,15 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
 
   const titleParts = service.name.split("\n");
 
-  const categoryMap: Record<string, "branding" | "outdoor"> = {
+  const categoryMap: Record<string, "branding" | "outdoor" | "events" | "printing"> = {
     "outdoor-advertising": "outdoor",
     "advertising": "outdoor",
-    "exhibition-booth": "outdoor",
-    "printing": "branding",
+    "exhibition-booth": "events",
+    "printing": "printing",
     "strategy": "branding",
     "design": "branding",
-    "event": "branding",
-    "marketing": "branding",
+    "event": "events",
+    "marketing": "digital",
   };
   const targetCategory = categoryMap[decodedId] || "branding";
   const relatedWorks = workItems.filter(item => item.category === targetCategory);

@@ -116,7 +116,38 @@ export default async function CampaignPage({ params }: { params: Promise<{ id: s
           </div>
         </section>
         
-        {item.details && item.details.sections ? (
+        {item.details && item.details.gallery ? (
+          <div style={{ backgroundColor: 'var(--white)', paddingBottom: '120px' }}>
+            {item.details.intro && (
+              <section className="work-intro" style={{ padding: '80px 0 40px' }}>
+                <div className="wrap">
+                  <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6, color: 'var(--gray-dim)', textAlign: 'center' }}>
+                    {item.details.intro}
+                  </p>
+                </div>
+              </section>
+            )}
+            <section style={{ padding: '40px 0' }}>
+              <div className="wrap">
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                  gap: '20px'
+                }}>
+                  {item.details.gallery.map((imgSrc, i) => (
+                    <div key={i} style={{ position: 'relative', width: '100%', overflow: 'hidden', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+                      <img 
+                        src={imgSrc} 
+                        alt={`${item.title} gallery image ${i + 1}`} 
+                        style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', aspectRatio: '4/3' }} 
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        ) : item.details && item.details.sections ? (
           <div style={{ backgroundColor: 'var(--white)', color: 'var(--black)', paddingBottom: '120px' }}>
             {item.details.intro && (
               <section className="work-intro" style={{ padding: '80px 0 40px' }}>

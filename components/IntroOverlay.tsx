@@ -29,6 +29,13 @@ export function IntroOverlay() {
       return;
     }
 
+    const hasPlayed = sessionStorage.getItem("fetan_intro_played");
+    if (hasPlayed) {
+      setRemoved(true);
+      return;
+    }
+    sessionStorage.setItem("fetan_intro_played", "true");
+
     document.documentElement.style.overflow = "hidden";
 
     let i = 0;
