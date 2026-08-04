@@ -24,7 +24,7 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
 
   const titleParts = service.name.split("\n");
 
-  const categoryMap: Record<string, "branding" | "outdoor" | "events" | "printing"> = {
+  const categoryMap: Record<string, "branding" | "outdoor" | "events" | "printing" | "digital"> = {
     "outdoor-advertising": "outdoor",
     "advertising": "outdoor",
     "exhibition-booth": "events",
