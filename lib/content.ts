@@ -106,8 +106,6 @@ export const navLinks: NavLink[] = [
   { href: "#services", label: "Services", chevron: true },
   { href: "#work", label: "Work" },
   { href: "#about", label: "About Us" },
-  { href: "https://www.fetanled.com/", label: "Fetan LED" },
-  { href: "https://outdoor.fetanadvertising.com/", label: "Outdoor" },
   { href: "#contact", label: "Start a Campaign", cta: true },
 ];
 
