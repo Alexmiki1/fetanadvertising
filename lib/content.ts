@@ -298,7 +298,7 @@ export const workItems: WorkItem[] = [
     title: "Abay Homes",
     description: "Citywide billboard rollout across 40 sites over 6 weeks.",
     visual: "g1",
-    heroImage: "/images/abay-home.jpg",
+    heroImage: "/images/abay-home.png",
     details: {
       intro: "The branding for Abay Homes was created to establish the company as a modern, trustworthy, and premium real estate developer in Ethiopia’s growing housing market. The goal was to build a strong visual identity that reflects quality construction, modern urban living, and long-term investment value while appealing to both local homeowners and diaspora investors.\n\nThe brand identity combines professionalism, elegance, and reliability through clean visuals, modern typography, and a refined real estate aesthetic that communicates comfort, trust, and contemporary living.",
       sections: [
