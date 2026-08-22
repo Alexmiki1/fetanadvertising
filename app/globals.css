@@ -1076,31 +1076,86 @@ header.is-hidden{
   }
   .cta-band .btn-primary:hover{background:#1a1a1a; color:var(--yellow); transform:translateY(-3px); box-shadow:0 14px 32px rgba(10,10,10,0.25);}
 
-  /* ---------------- QUOTE + MAP ---------------- */
+  /* ---------------- QUOTE + MAP (two-column layout) ---------------- */
   .quote-contact{
     background:var(--black);
     padding:150px 0;
   }
-  .quote-contact .section-head h2{color:var(--white);}
-  .quote-contact .section-head p{color:var(--white);}
-  .quote-head{align-items:flex-end;}
-  .quote-head .eyebrow{margin-bottom:18px;}
-  .quote-grid{
+
+  /* two-col grid */
+  .quote-two-col{
     display:grid;
-    grid-template-columns:1fr 1.1fr;
-    gap:36px;
-    align-items:stretch;
+    grid-template-columns:minmax(0, 0.85fr) minmax(480px, 1.15fr);
+    gap:48px;
+    align-items:start;
   }
-  .quote-map-panel{
+
+  /* ─ left info column ─ */
+  .quote-info-col{
     display:flex;
     flex-direction:column;
-    gap:22px;
-    min-height:100%;
+  }
+  .quote-info-sticky{
+    position:sticky;
+    top:100px;
+    display:flex;
+    flex-direction:column;
+  }
+  .quote-info-heading{
+    font-size:clamp(36px, 5vw, 62px);
+    color:var(--white);
+    margin-top:18px;
+    line-height:0.94;
+  }
+  .quote-info-subcopy{
+    margin-top:22px;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--gray);
+    max-width:520px;
+  }
+
+  /* checklist box */
+  .quote-checklist{
+    margin-top:36px;
+    padding:28px 28px 24px;
+    border:1px solid var(--line);
+    background:var(--black-soft);
+  }
+  .quote-checklist-title{
+    font-size:11px;
+    letter-spacing:0.14em;
+    color:var(--white);
+    margin-bottom:18px;
+  }
+  .quote-checklist-list{
+    display:grid;
+    gap:12px;
+  }
+  .quote-checklist-list li{
+    display:flex;
+    gap:12px;
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--gray);
+  }
+  .quote-check-icon{
+    flex-shrink:0;
+    margin-top:2px;
+    color:var(--yellow);
+    font-size:13px;
+  }
+
+  /* map block (inside left col) */
+  .quote-map-block{
+    margin-top:36px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
   }
   .quote-map-frame{
     position:relative;
-    flex:1;
-    min-height:420px;
+    min-height:260px;
     border:1px solid var(--line);
     overflow:hidden;
     background:var(--black-soft);
@@ -1151,10 +1206,36 @@ header.is-hidden{
   }
   .quote-map-contacts a:hover{color:var(--yellow); transform:translateX(3px);}
 
+  .quote-info-note{
+    margin-top:24px;
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--gray-dim);
+  }
+
+  /* ─ right form column ─ */
   .quote-form-panel{
     background:var(--black-soft);
     border:1px solid var(--line);
     padding:40px 36px;
+  }
+  .quote-form-eyebrow{
+    font-size:11px;
+    letter-spacing:0.18em;
+    color:var(--yellow);
+  }
+  .quote-form-title{
+    font-size:clamp(24px, 3.2vw, 38px);
+    color:var(--white);
+    margin-top:10px;
+    line-height:1;
+  }
+  .quote-form-subtitle{
+    margin-top:10px;
+    font-size:13.5px;
+    line-height:1.6;
+    color:var(--gray);
+    margin-bottom:24px;
   }
   .quote-form{display:flex; flex-direction:column; gap:18px;}
   .quote-row{
@@ -1457,8 +1538,9 @@ header.is-hidden{
     .test-nav{position:static; justify-content:flex-end; margin-bottom:18px;}
     .test-mark-bg{font-size:34vw; top:14px; left:24px;}
     .footer-top{grid-template-columns:1fr 1fr;}
-    .quote-grid{grid-template-columns:1fr;}
-    .quote-map-frame{min-height:320px;}
+    .quote-two-col{grid-template-columns:1fr;}
+    .quote-info-sticky{position:static;}
+    .quote-map-frame{min-height:240px;}
     .quote-form-panel{padding:30px 24px;}
     .quote-row{grid-template-columns:1fr;}
   }

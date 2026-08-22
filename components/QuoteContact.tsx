@@ -22,6 +22,15 @@ const initialState: FormState = {
   message: "",
 };
 
+const requirements = [
+  "Your full name and email address",
+  "Phone number for quick follow-up",
+  "Company or brand name (if applicable)",
+  "Which service you're interested in",
+  "A brief description of your project goals",
+  "Any timeline or budget considerations",
+];
+
 export function QuoteContact() {
   const [form, setForm] = useState<FormState>(initialState);
   const [submitted, setSubmitted] = useState(false);
@@ -64,56 +73,82 @@ export function QuoteContact() {
   return (
     <section className="quote-contact" id="contact">
       <div className="wrap">
-        <Reveal className="section-head quote-head">
-          <div>
-            <p className="eyebrow">{quoteFormContent.eyebrow}</p>
-            <h2 className="display">
-              {headingLines[0]}
-              <br />
-              {headingLines[1]}
-            </h2>
-          </div>
-          <p>{quoteFormContent.subcopy}</p>
-        </Reveal>
+        <div className="quote-two-col">
+          {/* ─── LEFT: Info panel ─── */}
+          <Reveal className="quote-info-col">
+            <div className="quote-info-sticky">
+              <span className="eyebrow">{quoteFormContent.eyebrow}</span>
+              <h2 className="display quote-info-heading">
+                {headingLines[0]}
+                <br />
+                {headingLines[1]}
+              </h2>
+              <p className="quote-info-subcopy">{quoteFormContent.subcopy}</p>
 
-        <div className="quote-grid">
-          <Reveal className="quote-map-panel">
-            <div className="quote-map-frame">
-              <iframe
-                title="Fetan Advertising on Google Maps"
-                src={siteMeta.mapsEmbedSrc}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
-            <div className="quote-map-meta">
-              <p className="mono quote-map-label">{quoteFormContent.mapHeading}</p>
-              <p className="quote-map-address">{quoteFormContent.mapAddress}</p>
-              <a
-                className="quote-map-link mono"
-                href={siteMeta.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open in Google Maps →
-              </a>
-              <ul className="quote-map-contacts">
-                <li>
-                  <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
-                </li>
-                <li>
-                  <a href={siteMeta.phoneHref}>{siteMeta.phone}</a>
-                </li>
-              </ul>
+              <div className="quote-checklist">
+                <h3 className="mono quote-checklist-title">Before you begin</h3>
+                <ul className="quote-checklist-list">
+                  {requirements.map((item) => (
+                    <li key={item}>
+                      <span className="quote-check-icon">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Map + contact info */}
+              <div className="quote-map-block">
+                <div className="quote-map-frame">
+                  <iframe
+                    title="Fetan Advertising on Google Maps"
+                    src={siteMeta.mapsEmbedSrc}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="quote-map-meta">
+                  <p className="mono quote-map-label">{quoteFormContent.mapHeading}</p>
+                  <p className="quote-map-address">{quoteFormContent.mapAddress}</p>
+                  <a
+                    className="quote-map-link mono"
+                    href={siteMeta.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open in Google Maps →
+                  </a>
+                  <ul className="quote-map-contacts">
+                    <li>
+                      <a href={`mailto:${siteMeta.email}`}>{siteMeta.email}</a>
+                    </li>
+                    <li>
+                      <a href={siteMeta.phoneHref}>{siteMeta.phone}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <p className="quote-info-note">
+                We typically respond within one business day. For urgent inquiries, call us directly or message on WhatsApp.
+              </p>
             </div>
           </Reveal>
 
+          {/* ─── RIGHT: Form panel ─── */}
           <Reveal className="quote-form-panel">
+            <div className="mono quote-form-eyebrow">Subscription requirements</div>
+            <h2 className="display quote-form-title">Tell us about your campaign.</h2>
+            <p className="quote-form-subtitle">
+              Required fields are marked with an asterisk. Our team will review and respond within one business day.
+            </p>
+
             {submitted ? (
               <p className="quote-success">{quoteFormContent.successMessage}</p>
             ) : null}
             {error ? <p className="quote-error">{error}</p> : null}
+
             <form className="quote-form" onSubmit={onSubmit}>
               <div className="quote-row">
                 <label className="quote-field">

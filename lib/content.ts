@@ -91,7 +91,7 @@ export const siteMeta = {
   ],
   siteUrl: "https://fetanadvertising.com",
   email:
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@fetanadvertising.com",
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@fetanadvertising.com",
   phone: "+251913001010",
   phoneHref: "tel:+251913001010",
   location: "Haile Gebre Silase St, Addis Ababa, Ethiopia",

@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 type QuotePayload = {
   name: string;
@@ -38,13 +38,15 @@ function parsePayload(body: unknown): QuotePayload | null {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to =
-    process.env.CONTACT_EMAIL ?? process.env.NEXT_PUBLIC_CONTACT_EMAIL;
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = parseInt(process.env.SMTP_PORT ?? "587", 10);
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+  const to = process.env.CONTACT_EMAIL ?? "contact@fetanadvertising.com";
   const from =
-    process.env.RESEND_FROM_EMAIL ?? "Fetan Advertising <onboarding@resend.dev>";
+    process.env.SMTP_FROM_EMAIL ?? `Fetan Advertising <${smtpUser}>`;
 
-  if (!apiKey || !to) {
+  if (!smtpHost || !smtpUser || !smtpPass) {
     return Response.json(
       { error: "Email is not configured on the server." },
       { status: 500 },
@@ -66,30 +68,37 @@ export async function POST(request: Request) {
     );
   }
 
-  const resend = new Resend(apiKey);
-
-  const { error } = await resend.emails.send({
-    from,
-    to: [to],
-    replyTo: payload.email,
-    subject: `New Sales Lead — ${payload.service} — ${payload.name}`,
-    text: [
-      `Name: ${payload.name}`,
-      `Email: ${payload.email}`,
-      `Phone: ${payload.phone ?? "—"}`,
-      `Company: ${payload.company ?? "—"}`,
-      `Service: ${payload.service}`,
-      "",
-      "Project details:",
-      payload.message,
-    ].join("\n"),
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: {
+      user: smtpUser,
+      pass: smtpPass,
+    },
   });
 
-  if (error) {
-    return Response.json(
-      { error: error.message || "Failed to send quote email." },
-      { status: 502 },
-    );
+  try {
+    await transporter.sendMail({
+      from,
+      to,
+      replyTo: payload.email,
+      subject: `New Sales Lead — ${payload.service} — ${payload.name}`,
+      text: [
+        `Name: ${payload.name}`,
+        `Email: ${payload.email}`,
+        `Phone: ${payload.phone ?? "—"}`,
+        `Company: ${payload.company ?? "—"}`,
+        `Service: ${payload.service}`,
+        "",
+        "Project details:",
+        payload.message,
+      ].join("\n"),
+    });
+  } catch (err) {
+    const message =
+      err instanceof Error ? err.message : "Failed to send quote email.";
+    return Response.json({ error: message }, { status: 502 });
   }
 
   return Response.json({ ok: true });
