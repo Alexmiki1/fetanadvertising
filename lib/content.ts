@@ -580,9 +580,9 @@ export const clientsSection = {
 
 export const clients: { name: string; logo: string; scale?: number }[] = [
   { name: "Dashen Bank", logo: "/images/clients/dashen-bank.png", scale: 1.2 },
-  { name: "Alpha Post Tension", logo: "/images/clients/client2.png", scale: 1.6 },
+  { name: "Alpha Post Tension", logo: "/images/clients/alpha-post-tension.png", scale: 1.6 },
   { name: "Horra Corporate Group", logo: "/images/clients/client3.png", scale: 1.6 },
-  { name: "Bamacon Construction", logo: "/images/clients/client4.png", scale: 1.6 },
+  { name: "Bamacon Construction", logo: "/images/clients/bamacon-construction.png", scale: 1.6 },
   { name: "BDO", logo: "/images/clients/client5.png", scale: 1.3 },
   { name: "Awash Bank", logo: "/images/clients/awash-bank.png", scale: 1.3 },
   { name: "Zemen Bank", logo: "/images/clients/zemen-bank-v2.png", scale: 1.2 },
