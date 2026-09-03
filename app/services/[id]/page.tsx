@@ -17,7 +17,7 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
   const { id } = await params;
   const decodedId = decodeURIComponent(id);
   const service = services.find((s) => s.id === decodedId);
-  
+
   if (!service) {
     notFound();
   }
@@ -25,8 +25,8 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
   const titleParts = service.name.split("\n");
 
   const categoryMap: Record<string, "branding" | "outdoor" | "events" | "printing" | "digital"> = {
-    "outdoor-advertising": "outdoor",
-    "advertising": "outdoor",
+    "outdoor-Advertising": "outdoor",
+    "Advertising": "outdoor",
     "exhibition-booth": "events",
     "printing": "printing",
     "strategy": "branding",
