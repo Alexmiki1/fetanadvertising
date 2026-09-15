@@ -94,6 +94,8 @@ export const siteMeta = {
     process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@fetanadvertising.com",
   phone: "+251970757575",
   phoneHref: "tel:+251970757575",
+  whatsapp: "+251913001010",
+  whatsappPhone: "+251913001010",
   location: "Haile Gebre Silase St, Addis Ababa, Ethiopia",
   mapsEmbedSrc:
     "https://www.google.com/maps?q=Fetan+Advertising,+Haile+Gebre+Silase+St,+Addis+Ababa&hl=en&z=16&output=embed",

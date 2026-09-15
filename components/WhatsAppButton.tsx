@@ -3,10 +3,11 @@
 import { siteMeta } from "@/lib/content";
 
 export function WhatsAppButton() {
-  const whatsappUrl = `https://wa.me/${siteMeta.phone.replace(/[^0-9]/g, "")}`;
+  const whatsappUrl = `https://wa.me/${siteMeta.whatsappPhone.replace(/[^0-9]/g, "")}`;
 
   return (
-    <a
+    
+     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
