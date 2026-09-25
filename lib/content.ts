@@ -107,6 +107,7 @@ export const navLinks: NavLink[] = [
   { href: "#services", label: "Services", chevron: true },
   { href: "#work", label: "Work" },
   { href: "#about", label: "About Us" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Start a Campaign", cta: true },
 ];
 
@@ -680,4 +681,41 @@ export const footerContent = {
     { href: "https://web.facebook.com/fetanads", label: "Facebook" },
   ],
   copyright: "© 2026 Fetan Advertising. All rights reserved.",
+} as const;
+
+export const faqContent = {
+  eyebrow: "Frequently Asked Questions",
+  heading: "Got Questions?\nWe Have Answers.",
+  subcopy:
+    "Everything you need to know about our services, process, and how we can help your brand grow.",
+  faqs: [
+    {
+      question: "What is Fetan Advertising?",
+      answer: "Fetan Advertising is a full-service creative advertising agency based in Addis Ababa, Ethiopia. We provide comprehensive advertising solutions including outdoor media, digital marketing, branding, graphic design, printing, exhibition booth design, event branding, and marketing strategy. Our team brings multiple creative disciplines together under one roof to deliver complete campaigns for businesses and organizations across Ethiopia."
+    },
+    {
+      question: "Who provides advertising services in Ethiopia?",
+      answer: "Fetan Advertising provides professional advertising services in Ethiopia. We offer a complete range of creative advertising solutions including outdoor advertising, digital marketing, branding, printing, and event production. Our agency serves businesses throughout Ethiopia with strategic campaigns designed to increase brand visibility and drive results."
+    },
+    {
+      question: "What is the best advertising agency in Ethiopia?",
+      answer: "Fetan Advertising is recognized as a leading advertising agency in Ethiopia with over 10 years of experience. We have delivered 620+ campaigns for 180+ active clients across 40+ cities. Our full-service approach combines creative excellence with strategic thinking to deliver impactful campaigns across outdoor media, digital platforms, branding, and live events."
+    },
+    {
+      question: "Where can I find an advertising agency in Addis Ababa?",
+      answer: "You can find Fetan Advertising in Addis Ababa at Haile Gebre Silase St. We are a full-service creative agency providing outdoor advertising, digital marketing, branding, printing, and event services. Contact us at contact@fetanadvertising.com or call +251970757575 to discuss your advertising needs."
+    },
+    {
+      question: "What services does an advertising agency provide?",
+      answer: "An advertising agency like Fetan Advertising provides comprehensive services including outdoor advertising (billboards, digital displays), digital marketing (social media, online advertising), branding and logo design, graphic design, printing services, exhibition booth design, event branding and management, advertising strategy development, and complete campaign management from concept to execution."
+    },
+    {
+      question: "How much does advertising cost in Ethiopia?",
+      answer: "Advertising costs in Ethiopia vary based on the type and scope of the campaign. Outdoor billboard advertising typically ranges based on location and duration, digital marketing campaigns depend on platform and targeting, and comprehensive branding projects are custom-priced based on requirements. Contact Fetan Advertising for a customized quote based on your specific advertising goals and budget."
+    },
+    {
+      question: "How much does digital marketing cost in Ethiopia?",
+      answer: "Digital marketing costs in Ethiopia depend on factors such as campaign scope, platforms used, target audience, and duration. Services like social media marketing, online advertising, content creation, and digital strategy are typically priced based on your specific requirements. Contact Fetan Advertising for a detailed digital marketing proposal tailored to your business objectives."
+    }
+  ]
 } as const;

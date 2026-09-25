@@ -11,6 +11,7 @@ import { WorkGrid } from "@/components/WorkGrid";
 import { StatsCounters } from "@/components/StatsCounters";
 import { Clients } from "@/components/Clients";
 import { Testimonials } from "@/components/Testimonials";
+import { FAQ } from "@/components/FAQ";
 import { CTABand } from "@/components/CTABand";
 import { SisterCompanies } from "@/components/SisterCompanies";
 import { QuoteContact } from "@/components/QuoteContact";
@@ -34,6 +35,7 @@ export default function Home() {
         <StatsCounters />
         <Clients />
         <Testimonials />
+        <FAQ />
         <SisterCompanies />
         <CTABand />
         <QuoteContact />

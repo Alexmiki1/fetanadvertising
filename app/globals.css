@@ -1497,6 +1497,94 @@ header.is-hidden{
     transform:translateX(4px);
   }
 
+  /* ---------------- FAQ SECTION ---------------- */
+  .faq{
+    padding:140px 0;
+    background:var(--white);
+  }
+  .faq-header{
+    text-align:center;
+    margin-bottom:80px;
+  }
+  .faq-eyebrow{
+    justify-content:center;
+    margin-bottom:24px;
+  }
+  .faq-heading{
+    font-size:clamp(32px,5vw,56px);
+    margin-bottom:20px;
+  }
+  .faq-subcopy{
+    font-size:16px;
+    line-height:1.7;
+    color:var(--gray-dim);
+    max-width:600px;
+    margin:0 auto;
+  }
+  .faq-list{
+    max-width:900px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .faq-item{
+    border:1px solid var(--line-lt);
+    border-radius:12px;
+    overflow:hidden;
+    background:var(--white);
+    transition:border-color .3s var(--ease);
+  }
+  .faq-item:hover{
+    border-color:var(--yellow-deep);
+  }
+  .faq-item-open{
+    border-color:var(--yellow);
+  }
+  .faq-question{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:24px 32px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-align:left;
+    font-family:var(--font-sans),sans-serif;
+    font-size:17px;
+    font-weight:600;
+    color:var(--black);
+    transition:color .3s var(--ease);
+  }
+  .faq-question:hover{
+    color:var(--yellow-deep);
+  }
+  .faq-question-text{
+    flex:1;
+    padding-right:20px;
+  }
+  .faq-icon{
+    font-size:28px;
+    font-weight:400;
+    color:var(--yellow);
+    transition:transform .3s var(--ease);
+    flex-shrink:0;
+  }
+  .faq-item-open .faq-icon{
+    transform:rotate(180deg);
+  }
+  .faq-answer{
+    overflow:hidden;
+    transition:max-height .4s var(--ease), opacity .3s var(--ease);
+  }
+  .faq-answer-text{
+    padding:0 32px 32px;
+    font-size:15px;
+    line-height:1.75;
+    color:var(--gray-dim);
+  }
+
   @media (max-width:980px){
 
     .wrap{padding:0 26px;}
@@ -1543,6 +1631,8 @@ header.is-hidden{
     .quote-map-frame{min-height:240px;}
     .quote-form-panel{padding:30px 24px;}
     .quote-row{grid-template-columns:1fr;}
+    .faq-question{padding:20px 24px; font-size:15px;}
+    .faq-answer-text{padding:0 24px 24px; font-size:14px;}
   }
   @media (max-width:600px){
     section{padding:100px 0;}
