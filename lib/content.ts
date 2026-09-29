@@ -105,9 +105,9 @@ export const siteMeta = {
 export const navLinks: NavLink[] = [
   { href: "#top", label: "Home" },
   { href: "#services", label: "Services", chevron: true },
-  { href: "#work", label: "Work" },
+  { href: "/work", label: "Work" },
   { href: "#about", label: "About Us" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/faq", label: "FAQ" },
   { href: "#contact", label: "Start a Campaign", cta: true },
 ];
 
@@ -133,14 +133,14 @@ export const videoBannerContent = {
 
 export const aboutContent = {
   eyebrow: "WHO ARE WE",
-  heading: "THE\nCREATIVE\nREBELLION",
+  heading: "10+ YEARS\nOF CREATING\nIMPACT",
   button: {
     label: "ABOUT US",
     href: "/#about",
   },
   paragraphs: [
-    "Fetan Advertising is an advertising and creative agency in Ethiopia dedicated to helping businesses grow through innovative marketing, creative storytelling, and impactful brand experiences. We specialize in outdoor advertising, digital LED screen advertising, printing, graphic design, exhibition booths, event branding, digital marketing, and brand strategy, providing complete advertising solutions tailored to the unique goals of every client. From designing eye catching campaigns and producing high quality print materials to managing digital marketing initiatives and delivering large scale advertising projects, we combine creativity, technology, and strategic thinking to ensure every campaign reaches the right audience and delivers meaningful results.",
-    "Our team works closely with businesses, organizations, and institutions to transform ideas into powerful campaigns that strengthen brand identity, increase visibility, engage customers, and create lasting impressions. Whether launching a new product, promoting a service, or building long term brand awareness, we are committed to delivering innovative solutions that help our clients stand out in a competitive market and achieve measurable success."
+    "For over a decade, Fetan Advertising has been at the forefront of Ethiopia's advertising industry, delivering 620+ successful campaigns for 180+ active clients across 40+ cities. What started as a vision to transform how brands connect with audiences has grown into Ethiopia's leading full-service creative advertising agency, bringing outdoor media, digital marketing, branding, printing, and live event production under one roof.",
+    "Our journey has been defined by relentless creativity and measurable results. From billboards that dominate Addis Ababa's skyline to digital campaigns that engage millions, from exhibition booths that captivate at trade shows to complete brand identities that redefine market presence—we've built our reputation on delivering work that doesn't just get seen, but gets remembered. Our team combines strategic thinking with creative excellence to help businesses of all sizes achieve their marketing goals and build lasting brand equity in Ethiopia's dynamic market."
   ]
 } as const;
 

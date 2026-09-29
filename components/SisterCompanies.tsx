@@ -18,11 +18,25 @@ const companies = [
     ),
   },
   {
+    id: "fetan-ads",
+    name: "Fetan Ads",
+    tag: "OUTDOOR ADVERTISING SPECIALIST",
+    description:
+      "Specialized outdoor advertising network focusing on billboards, transit ads, and traditional out-of-home media across Ethiopia's prime locations.",
+    href: "https://www.fetanads.com/",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 3v18h18" />
+        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+      </svg>
+    ),
+  },
+  {
     id: "fetan-dooh",
     name: "Fetan DOOH",
-    tag: "OUT-OF-HOME SCREEN ADVERTISING",
+    tag: "DIGITAL SCREEN ADVERTISING",
     description:
-      "Ethiopia's premier outdoor digital screen advertising network. Connecting brands with millions of viewers across prime urban locations.",
+      "Ethiopia's premier digital out-of-home screen advertising network. Connecting brands with millions of viewers through LED screens across prime urban locations.",
     href: "https://dooh.et/",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -41,8 +55,7 @@ export function SisterCompanies() {
           <p className="eyebrow">Our Network</p>
           <h2 className="display sister-title">EXPLORE OUR SISTER COMPANIES.</h2>
           <p className="sister-subtitle">
-            Fetan Advertising is part of a larger network dedicated to transforming
-            the advertising and technology landscape in Ethiopia.
+            Fetan Advertising is the parent brand providing full-service creative advertising. Our sister companies specialize in outdoor advertising (Fetan Ads), digital screen networks (Fetan DOOH), and LED hardware supply (Fetan LED).
           </p>
         </Reveal>
 

@@ -89,6 +89,68 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Fetan Advertising",
+              "url": siteMeta.siteUrl,
+              "logo": `${siteMeta.siteUrl}/logo.png`,
+              "description": siteMeta.description,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Haile Gebre Silase St",
+                "addressLocality": "Addis Ababa",
+                "addressCountry": "ET"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": siteMeta.phone,
+                "email": siteMeta.email,
+                "contactType": "customer service"
+              },
+              "sameAs": [
+                "https://www.instagram.com/fetanads",
+                "https://www.linkedin.com/company/fetanadvertising/",
+                "https://web.facebook.com/fetanads"
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Fetan Advertising",
+              "image": `${siteMeta.siteUrl}/logo.png`,
+              "url": siteMeta.siteUrl,
+              "telephone": siteMeta.phone,
+              "email": siteMeta.email,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Haile Gebre Silase St",
+                "addressLocality": "Addis Ababa",
+                "addressCountry": "ET"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "9.0192",
+                "longitude": "38.7467"
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              },
+              "priceRange": "$$"
+            })
+          }}
+        />
         {children}
         <WhatsAppButton />
       </body>

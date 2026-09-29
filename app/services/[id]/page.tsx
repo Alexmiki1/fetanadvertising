@@ -4,6 +4,26 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTABand } from "@/components/CTABand";
 import { WorkCard } from "@/components/WorkGrid";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const decodedId = decodeURIComponent(id);
+  const service = services.find((s) => s.id === decodedId);
+
+  if (!service) {
+    return {
+      title: "Service Not Found | Fetan Advertising",
+    };
+  }
+
+  const serviceName = service.name.replace(/\n/g, " ");
+  
+  return {
+    title: `${serviceName} | Fetan Advertising`,
+    description: service.desc || `Professional ${serviceName} services in Ethiopia. Full-service creative advertising agency delivering impactful campaigns across outdoor media, digital marketing, branding, and more.`,
+  };
+}
 
 export function generateStaticParams() {
   return services
@@ -71,6 +91,18 @@ export default async function ServicePage({ params }: { params: Promise<{ id: st
             </div>
           </section>
         )}
+
+        <section style={{ padding: '80px 0', backgroundColor: 'var(--white-soft)' }}>
+          <div className="wrap">
+            <h2 className="display" style={{ marginBottom: '40px', fontSize: 'clamp(2rem, 5vw, 3rem)' }}>Explore More</h2>
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+              <a href="/work" className="btn btn-primary">View Our Portfolio</a>
+              <a href="/faq" className="btn btn-secondary">FAQ</a>
+              <a href="https://fetanads.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Fetan Ads</a>
+              <a href="https://fetanled.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">Fetan LED</a>
+            </div>
+          </div>
+        </section>
       </main>
       <CTABand />
       <Footer />
